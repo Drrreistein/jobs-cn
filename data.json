@@ -228,7 +228,7 @@
     "exposure_rationale": "The core of this occupation involves physical labor, animal handling, and operating machinery in unpredictable outdoor environments, which provides a strong natural barrier to AI. While AI and robotics are increasingly used for precision agriculture and automated harvesting, the high cost of hardware and the need for manual dexterity in varied conditions mean human workers remain essential for the majority of tasks.",
     "url": "https://www.bls.gov/ooh/farming-fishing-and-forestry/agricultural-workers.htm",
     "title_cn": "农业工人",
-    "education_cn": "See How to Become One",
+    "education_cn": "点击查看",
     "outlook_desc_cn": "下降",
     "category_cn": "农业、渔业和林业类职业",
     "exposure_rationale_cn": "该职业的核心涉及体力劳动、动物处理以及在不可预测的户外环境中操作机械，这为人工智能提供了强大的天然屏障。虽然人工智能和机器人技术越来越多地用于精准农业和自动收割，但硬件的高成本以及在不同条件下对手工灵活性的需求意味着人类工人对于大多数任务仍然至关重要。"
@@ -282,7 +282,7 @@
     "exposure_rationale": "The occupation is a hybrid of high-level digital information processing and critical physical presence. While AI and advanced automation can handle navigation, flight planning, and system monitoring, the role requires real-time human intervention for physical emergencies, complex sensory awareness in unpredictable weather, and the legal/ethical responsibility of passenger safety in the physical world.",
     "url": "https://www.bls.gov/ooh/transportation-and-material-moving/airline-and-commercial-pilots.htm",
     "title_cn": "航空公司和商业飞行员",
-    "education_cn": "See How to Become One",
+    "education_cn": "点击查看",
     "outlook_desc_cn": "与平均水平相当",
     "category_cn": "运输和物料搬运类职业",
     "exposure_rationale_cn": "该职业是高级数字信息处理和关键物理存在的混合体。虽然人工智能和先进的自动化可以处理导航、飞行计划和系统监控，但该角色需要对物理紧急情况进行实时人工干预、不可预测的天气中的复杂感官意识以及物理世界中乘客安全的法律/道德责任。"
@@ -318,9 +318,9 @@
     "exposure_rationale": "The occupation is split between highly exposed digital work and less exposed physical work. Broadcast and radio roles are under significant threat from AI-generated voices and automated content curation, whereas live event DJs and emcees retain a physical and interpersonal barrier that is harder to automate.",
     "url": "https://www.bls.gov/ooh/media-and-communication/announcers.htm",
     "title_cn": "播音员和DJ",
-    "education_cn": "See How to Become One",
+    "education_cn": "点击查看",
     "outlook_desc_cn": "下降",
-    "category_cn": "media-and-communication",
+    "category_cn": "媒体与通讯",
     "exposure_rationale_cn": "该职业分为高度暴露的数字工作和较少暴露的体力工作。广播和广播角色受到人工智能生成的声音和自动内容管理的重大威胁，而现场活动 DJ 和主持人则保留着更难实现自动化的身体和人际障碍。"
   },
   {
@@ -408,7 +408,7 @@
     "exposure_rationale": "This occupation is a hybrid of digital knowledge work and physical preservation. AI will significantly automate archival tasks like cataloging, metadata generation, and electronic record management, while also assisting curators with research and exhibit design. However, the physical requirements of handling artifacts, restoring delicate items, and managing in-person public interactions provide a substantial buffer against full automation.",
     "url": "https://www.bls.gov/ooh/education-training-and-library/curators-museum-technicians-and-conservators.htm",
     "title_cn": "档案管理员、策展人和博物馆工作人员",
-    "education_cn": "See How to Become One",
+    "education_cn": "点击查看",
     "outlook_desc_cn": "高于平均水平",
     "category_cn": "教育、培训和图书馆类职业",
     "exposure_rationale_cn": "这个职业是数字知识工作和实物保存的混合体。人工智能将显着自动化档案任务，如编目、元数据生成和电子记录管理，同时还协助策展人进行研究和展览设计。然而，处理文物、恢复精致物品和管理面对面的公共互动的物理要求为完全自动化提供了巨大的缓冲。"
@@ -428,7 +428,7 @@
     "title_cn": "艺术总监",
     "education_cn": "学士学位",
     "outlook_desc_cn": "与平均水平相当",
-    "category_cn": "arts-and-design",
+    "category_cn": "艺术与设计",
     "exposure_rationale_cn": "艺术总监在一个基本的数字领域工作，人工智能在图像生成、布局设计和视频合成方面正在迅速发展。虽然该角色需要高水平的人类判断、领导力和客户沟通，但核心工作产品可​​以通过人工智能大幅增强或自动化，从而显着提高生产力，并有可能减少监督创意项目所需的总监数量。"
   },
   {
@@ -482,7 +482,7 @@
     "title_cn": "运动训练师",
     "education_cn": "硕士学位",
     "outlook_desc_cn": "远高于平均水平",
-    "category_cn": "healthcare",
+    "category_cn": "医疗健康",
     "exposure_rationale_cn": "运动训练师的核心职责——例如使用胶带/支架、在场上提供紧急急救以及进行手动康复——需要人工智能无法复制的物理存在和触觉技能。虽然人工智能可以协助完成损伤分析、记录保存和设计恢复方案等外围任务，但这项工作从根本上仍然基于实时人机交互和身体保健服务。"
   },
   {
@@ -518,7 +518,7 @@
     "title_cn": "听力学家",
     "education_cn": "博士或专业学位",
     "outlook_desc_cn": "远高于平均水平",
-    "category_cn": "healthcare",
+    "category_cn": "医疗健康",
     "exposure_rationale_cn": "听力学是一门临床医疗保健专业，需要亲自到场进行检查、除蜡以及安装助听器或人工耳蜗等硬件。虽然人工智能将显着提高诊断准确性、听力设备中的信号处理和自动化测试，但这项工作的核心涉及人际咨询、患者身体互动以及无法完全数字化的复杂临床判断。"
   },
   {
@@ -732,9 +732,9 @@
     "exposure_rationale": "This occupation is a hybrid of physical labor (setting up hardware, rigging lights, running cables) and digital knowledge work (mixing sound, editing video, managing broadcast signals). While the physical installation tasks are resistant to AI, the digital components—such as sound leveling, video editing, and signal monitoring—are being rapidly automated by AI tools, leading to higher productivity and a projected decline in specialized roles like sound and broadcast technicians.",
     "url": "https://www.bls.gov/ooh/media-and-communication/broadcast-and-sound-engineering-technicians.htm",
     "title_cn": "广播、音响和视频技术员",
-    "education_cn": "See How to Become One",
+    "education_cn": "点击查看",
     "outlook_desc_cn": "低于平均水平",
-    "category_cn": "media-and-communication",
+    "category_cn": "媒体与通讯",
     "exposure_rationale_cn": "该职业是体力劳动（设置硬件、安装灯光、铺设电缆）和数字知识工作（混合声音、编辑视频、管理广播信号）的混合体。虽然物理安装任务对人工智能有抵抗力，但数字组件（例如声级调节、视频编辑和信号监控）正在通过人工智能工具快速实现自动化，从而提高生产力，并预计声音和广播技术人员等专业角色的减少。"
   },
   {
@@ -824,7 +824,7 @@
     "title_cn": "心血管技术员和技术员",
     "education_cn": "副学士学位",
     "outlook_desc_cn": "与平均水平相当",
-    "category_cn": "healthcare",
+    "category_cn": "医疗健康",
     "exposure_rationale_cn": "该职位需要大量人员在场，以完成患者定位、连接电极和协助侵入性外科手术等任务。虽然人工智能将高度自动化心电图和肺部数据的分析，但临床环境中患者护理、体力和实时技术援助的核心要求为完全自动化提供了强大的障碍。"
   },
   {
@@ -1004,7 +1004,7 @@
     "title_cn": "脊椎按摩师",
     "education_cn": "博士或专业学位",
     "outlook_desc_cn": "远高于平均水平",
-    "category_cn": "healthcare",
+    "category_cn": "医疗健康",
     "exposure_rationale_cn": "脊椎按摩疗法的核心是高度体力劳动，需要灵活的手法来调整脊柱，并对患者的肌肉骨骼系统进行实时身体评估。虽然人工智能可以协助完成医学影像分析、诊断建议和行政业务管理等外围任务，但它无法取代定义该职业的基本实践治疗干预措施。"
   },
   {
@@ -1056,7 +1056,7 @@
     "exposure_rationale": "This occupation is heavily focused on information processing, document review, and data-driven decision-making, all of which are highly susceptible to AI automation. While physical inspections and interpersonal negotiations provide some protection, the BLS already projects a decline in employment due to AI's ability to analyze photos of damage and automate claim calculations.",
     "url": "https://www.bls.gov/ooh/business-and-financial/claims-adjusters-appraisers-examiners-and-investigators.htm",
     "title_cn": "理赔调整员、评估师、审查员和调查员",
-    "education_cn": "See How to Become One",
+    "education_cn": "点击查看",
     "outlook_desc_cn": "下降",
     "category_cn": "商业和金融类职业",
     "exposure_rationale_cn": "该职业主要关注信息处理、文档审查和数据驱动的决策，所有这些都非常容易受到人工智能自动化的影响。虽然实物检查和人际谈判提供了一些保护，但美国劳工统计局已经预测，由于人工智能分析损坏照片和自动计算索赔的能力，就业率将会下降。"
@@ -1076,7 +1076,7 @@
     "title_cn": "临床实验室技师和技术员",
     "education_cn": "学士学位",
     "outlook_desc_cn": "低于平均水平",
-    "category_cn": "healthcare",
+    "category_cn": "医疗健康",
     "exposure_rationale_cn": "该职业是物理实验室工作和数字数据分析的混合体。虽然人工智能和计算机视觉正在快速自动解释载玻片和测试结果（高曝光），但准备标本、维护复杂硬件以及与患者互动的物理要求为完全自动化提供了重大障碍。"
   },
   {
@@ -1184,7 +1184,7 @@
     "title_cn": "计算机和信息研究科学家",
     "education_cn": "硕士学位",
     "outlook_desc_cn": "远高于平均水平",
-    "category_cn": "computer-and-information-technology",
+    "category_cn": "计算机与信息技术",
     "exposure_rationale_cn": "这个职业从根本上来说是数字化的，涉及高级编码、算法设计和数据分析——所有这些都是人工智能快速发展的领域。虽然这些科学家是人工智能的构建者，但他们创建的工具越来越能够自动化自己的核心任务，例如编写代码、简化算法和分析实验结果，从而极大地提高生产力和角色重组。"
   },
   {
@@ -1238,7 +1238,7 @@
     "title_cn": "计算机网络架构师",
     "education_cn": "学士学位",
     "outlook_desc_cn": "远高于平均水平",
-    "category_cn": "computer-and-information-technology",
+    "category_cn": "计算机与信息技术",
     "exposure_rationale_cn": "设计、记录和配置网络的核心工作从根本上来说是数字化和数据驱动的，因此非常容易受到人工智能驱动的自动化和优化工具的影响。虽然物理硬件部署和复杂的利益相关者管理提供了轻微的缓冲，但人工智能在自动化网络拓扑设计、安全配置和预测性故障排除方面正在快速进步，这将显着提高个人生产力并重组角色。"
   },
   {
@@ -1256,7 +1256,7 @@
     "title_cn": "计算机程序员",
     "education_cn": "学士学位",
     "outlook_desc_cn": "下降",
-    "category_cn": "computer-and-information-technology",
+    "category_cn": "计算机与信息技术",
     "exposure_rationale_cn": "编写、测试和调试代码的核心任务完全是数字化的，并且与大型语言模型的优势完美契合，而大型语言模型已经在这些领域非常精通。美国劳工统计局特别预测，由于自动化和人工智能，这一职业将出现下降，因为这些工具允许更少的工人生成相同数量的代码，并将更高级别的逻辑转移给软件开发人员。"
   },
   {
@@ -1272,9 +1272,9 @@
     "exposure_rationale": "The core tasks of diagnosing technical issues, documenting problems, and guiding users through digital workflows are highly susceptible to AI automation via advanced chatbots and LLM-driven troubleshooting. While some physical hardware setup and complex onsite networking remain, the vast majority of the work is digital information processing that AI can increasingly handle, as evidenced by the BLS's projected decline in employment due to automation.",
     "url": "https://www.bls.gov/ooh/computer-and-information-technology/computer-support-specialists.htm",
     "title_cn": "计算机支持专员",
-    "education_cn": "See How to Become One",
+    "education_cn": "点击查看",
     "outlook_desc_cn": "下降",
-    "category_cn": "computer-and-information-technology",
+    "category_cn": "计算机与信息技术",
     "exposure_rationale_cn": "诊断技术问题、记录问题和指导用户完成数字工作流程的核心任务非常容易通过高级聊天机器人和法学硕士驱动的故障排除而受到人工智能自动化的影响。虽然一些物理硬件设置和复杂的现场网络仍然存在，但绝大多数工作是人工智能可以越来越多地处理的数字信息处理，劳工统计局预计自动化导致的就业下降就证明了这一点。"
   },
   {
@@ -1292,7 +1292,7 @@
     "title_cn": "计算机系统分析师",
     "education_cn": "学士学位",
     "outlook_desc_cn": "远高于平均水平",
-    "category_cn": "computer-and-information-technology",
+    "category_cn": "计算机与信息技术",
     "exposure_rationale_cn": "这个职业从根本上来说是数字化的，涉及数据建模、系统设计和技术分析，可以完全在计算机上执行。人工智能非常有能力实现核心任务的自动化，例如编写技术文档、生成系统图、分析成本效益数据以及协助角色的编程和调试。"
   },
   {
@@ -1380,7 +1380,7 @@
     "exposure_rationale": "The core duties of this occupation are almost entirely physical, involving manual labor, tool operation, and site preparation in unpredictable outdoor environments. While AI might assist with peripheral tasks like scheduling or specialized robotic equipment control, the vast majority of the work requires human presence, physical strength, and real-time adaptation to physical obstacles.",
     "url": "https://www.bls.gov/ooh/construction-and-extraction/construction-laborers-and-helpers.htm",
     "title_cn": "建筑工人和助手",
-    "education_cn": "See How to Become One",
+    "education_cn": "点击查看",
     "outlook_desc_cn": "远高于平均水平",
     "category_cn": "建筑和开采类职业",
     "exposure_rationale_cn": "该职业的核心职责几乎完全是体力劳动，涉及体力劳动、工具操作以及在不可预测的户外环境中进行场地准备。虽然人工智能可能会协助完成调度或专门的机器人设备控制等外围任务，但绝大多数工作需要人类的存在、体力和对物理障碍的实时适应。"
@@ -1416,7 +1416,7 @@
     "exposure_rationale": "The core of the job involves physical dexterity, sensory judgment (taste and smell), and real-time adaptation in a high-heat, unpredictable kitchen environment. While AI-driven automation is already impacting fast food and routine institutional cooking, high-end restaurant and private household cooking remain protected by the need for complex manual skills and human creativity.",
     "url": "https://www.bls.gov/ooh/food-preparation-and-serving/cooks.htm",
     "title_cn": "厨师",
-    "education_cn": "See How to Become One",
+    "education_cn": "点击查看",
     "outlook_desc_cn": "高于平均水平",
     "category_cn": "食品准备和服务类职业",
     "exposure_rationale_cn": "这项工作的核心涉及身体的灵活性、感官判断（味觉和嗅觉）以及在高温、不可预测的厨房环境中的实时适应。虽然人工智能驱动的自动化已经影响了快餐和日常机构烹饪，但高端餐厅和私人家庭烹饪仍然受到对复杂手工技能和人类创造力的需求的保护。"
@@ -1488,9 +1488,9 @@
     "exposure_rationale": "This occupation is a hybrid of physical craftsmanship and digital creation. While craft artists (potters, glassblowers) and sculptors have low exposure due to the physical nature of their work, digital artists and illustrators face very high exposure as AI can now generate high-quality imagery and complex designs from text prompts. The overall score reflects this split, as AI significantly impacts the commercial and digital segments of the field while leaving traditional physical mediums largely intact.",
     "url": "https://www.bls.gov/ooh/arts-and-design/craft-and-fine-artists.htm",
     "title_cn": "工艺和美术家",
-    "education_cn": "See How to Become One",
+    "education_cn": "点击查看",
     "outlook_desc_cn": "几乎无变化",
-    "category_cn": "arts-and-design",
+    "category_cn": "艺术与设计",
     "exposure_rationale_cn": "这个职业是实体工艺和数字创作的混合体。虽然手工艺艺术家（陶艺家、玻璃吹制工）和雕塑家由于其工作的物理性质而曝光度较低，但数字艺术家和插画家却面临着非常高的曝光度，因为人工智能现在可以根据文本提示生成高质量的图像和复杂的设计。总体得分反映了这种分裂，因为人工智能对该领域的商业和数字领域产生了重大影响，同时传统的物理媒体基本完好无损。"
   },
   {
@@ -1542,7 +1542,7 @@
     "exposure_rationale": "The core of this occupation is physical performance, athleticism, and real-time human interaction in physical spaces, which AI cannot replicate. While AI may assist choreographers with music selection or administrative tasks, the fundamental value of the work lies in the human body's movement and live artistic expression.",
     "url": "https://www.bls.gov/ooh/entertainment-and-sports/dancers-and-choreographers.htm",
     "title_cn": "舞者和编舞",
-    "education_cn": "See How to Become One",
+    "education_cn": "点击查看",
     "outlook_desc_cn": "高于平均水平",
     "category_cn": "娱乐和体育类职业",
     "exposure_rationale_cn": "这项职业的核心是身体表现、运动能力以及物理空间中的实时人际互动，这是人工智能无法复制的。虽然人工智能可以协助编舞者完成音乐选择或管理任务，但这项工作的根本价值在于人体的运动和现场艺术表达。"
@@ -1580,7 +1580,7 @@
     "title_cn": "数据库管理员和架构师",
     "education_cn": "学士学位",
     "outlook_desc_cn": "与平均水平相当",
-    "category_cn": "computer-and-information-technology",
+    "category_cn": "计算机与信息技术",
     "exposure_rationale_cn": "这个职业完全是数字化的，涉及编码（SQL）、系统架构和数据管理——所有这些都是人工智能异常精通的领域。人工智能已经可以自动执行 DBA 的日常任务，例如性能调优、查询优化和安全监控，而法学硕士则非常有能力生成和调试数据库架构师使用的复杂模式和脚本。"
   },
   {
@@ -1634,7 +1634,7 @@
     "title_cn": "牙科助理",
     "education_cn": "高等教育非学位证书",
     "outlook_desc_cn": "高于平均水平",
-    "category_cn": "healthcare",
+    "category_cn": "医疗健康",
     "exposure_rationale_cn": "该工作的核心涉及体力、动手任务，例如对器械进行消毒、协助手术以及提供需要人员在场和手动灵巧的直接患者护理。虽然人工智能可以显着自动化该角色的管理和数字方面（例如调度、计费和初步 X 射线分析），但工作日的大部分时间都花在物理牙科手术室中，而人工智能目前无法取代人类劳动力。"
   },
   {
@@ -1652,7 +1652,7 @@
     "title_cn": "牙科卫生师",
     "education_cn": "副学士学位",
     "outlook_desc_cn": "远高于平均水平",
-    "category_cn": "healthcare",
+    "category_cn": "医疗健康",
     "exposure_rationale_cn": "这一职业的核心涉及在临床环境中对患者进行高精度的手工操作和物理程序，这是人工智能无法复制的。虽然人工智能可以协助分析 X 射线或自动化患者记录等外围任务，但清洁牙齿和进行体检的主要工作仍然与自动化无关。"
   },
   {
@@ -1670,7 +1670,7 @@
     "title_cn": "牙医",
     "education_cn": "博士或专业学位",
     "outlook_desc_cn": "与平均水平相当",
-    "category_cn": "healthcare",
+    "category_cn": "医疗健康",
     "exposure_rationale_cn": "牙科的核心涉及临床环境中高度精确的物理程序、手工灵巧性和实时患者互动，这些都对人工智能自动化产生了抵制。虽然人工智能将通过 X 射线分析显着提高诊断准确性并简化行政实践管理，但进行手术和恢复工作的物理要求对高暴露造成了强大的障碍。"
   },
   {
@@ -1706,7 +1706,7 @@
     "title_cn": "诊断医学超声技师",
     "education_cn": "副学士学位",
     "outlook_desc_cn": "远高于平均水平",
-    "category_cn": "healthcare",
+    "category_cn": "医疗健康",
     "exposure_rationale_cn": "该职业是体力工作和数字工作的混合体；虽然人工智能在图像分析和诊断辅助方面正在迅速发展，但该角色需要大量的物理存在来定位患者并以高度手眼协调性操作传感器。此外，患者护理的人际关系以及扫描期间所需的实时身体调整为完全自动化提供了巨大的障碍。"
   },
   {
@@ -1742,7 +1742,7 @@
     "title_cn": "营养师和营养学家",
     "education_cn": "学士学位",
     "outlook_desc_cn": "高于平均水平",
-    "category_cn": "healthcare",
+    "category_cn": "医疗健康",
     "exposure_rationale_cn": "分析营养数据、解释研究和创建个性化膳食计划的核心任务是高度数字化和数据驱动的，这使得它们容易受到人工智能自动化和增强的影响。然而，该角色需要在医疗环境中进行大量的人际咨询、同理心和临床判断，这为完全自动化提供了缓冲。"
   },
   {
@@ -1814,7 +1814,7 @@
     "title_cn": "编辑",
     "education_cn": "学士学位",
     "outlook_desc_cn": "低于平均水平",
-    "category_cn": "media-and-communication",
+    "category_cn": "媒体与通讯",
     "exposure_rationale_cn": "编辑是一种以语言处理为中心的全数字化职业，这是大语言模型的核心优势。人工智能已经可以执行高级文本编辑、事实检查和重写，从而显着提高个人生产力并减少日常内容管理所需的人工编辑总数。"
   },
   {
@@ -1866,7 +1866,7 @@
     "exposure_rationale": "The core of this occupation involves physical manipulation of hardware, manual troubleshooting in unpredictable environments, and the use of hand tools, which are highly resistant to AI automation. While AI can significantly enhance diagnostic software and predictive maintenance schedules, the physical acts of disassembling, repairing, and reassembling complex electrical components require human dexterity and presence.",
     "url": "https://www.bls.gov/ooh/installation-maintenance-and-repair/electrical-and-electronics-installers-and-repairers.htm",
     "title_cn": "电气和电子安装和维修工",
-    "education_cn": "See How to Become One",
+    "education_cn": "点击查看",
     "outlook_desc_cn": "几乎无变化",
     "category_cn": "安装、维护和维修类职业",
     "exposure_rationale_cn": "该职业的核心涉及对硬件的物理操作、在不可预测的环境中进行手动故障排除以及手动工具的使用，这些对人工智能自动化具有很强的抵抗力。虽然人工智能可以显着增强诊断软件和预测性维护计划，但拆卸、维修和重新组装复杂电气元件的物理行为需要人类的灵活性和存在。"
@@ -1994,7 +1994,7 @@
     "title_cn": "急救医疗技师和护理人员",
     "education_cn": "高等教育非学位证书",
     "outlook_desc_cn": "高于平均水平",
-    "category_cn": "healthcare",
+    "category_cn": "医疗健康",
     "exposure_rationale_cn": "这一职业的核心涉及物理干预、手工灵巧性以及在不可预测的环境中实时人类存在，这些对人工智能具有很强的抵抗力。虽然人工智能将极大地协助完成心电图解释、诊断决策支持和自动记录等外围任务，但患者运输和实际紧急护理的物理要求仍然是人类的基本功能。"
   },
   {
@@ -2120,7 +2120,7 @@
     "title_cn": "运动生理学家",
     "education_cn": "学士学位",
     "outlook_desc_cn": "远高于平均水平",
-    "category_cn": "healthcare",
+    "category_cn": "医疗健康",
     "exposure_rationale_cn": "该角色涉及大量的身体活动，包括进行压力测试、使用医疗设备测量生命体征以及提供实际的康复护理。虽然人工智能可以高度自动化工作的数字化方面，例如分析病史、处理生物特征数据和生成个性化的锻炼方案，但医疗环境中实时人机交互、身体评估和临床监督的核心要求限制了其总暴露程度。"
   },
   {
@@ -2156,7 +2156,7 @@
     "title_cn": "时装设计师",
     "education_cn": "学士学位",
     "outlook_desc_cn": "低于平均水平",
-    "category_cn": "arts-and-design",
+    "category_cn": "艺术与设计",
     "exposure_rationale_cn": "时装设计日益数字化，利用 CAD 和图形软件进行草图绘制、趋势分析和虚拟建模，这些领域都是生成式 AI 快速发展的领域。虽然选择面料、创建原型和监督生产的物理方面提供了缓冲，但核心创意和分析任务非常容易受到人工智能驱动的自动化和生产力提升的影响。"
   },
   {
@@ -2174,7 +2174,7 @@
     "title_cn": "电影和视频编辑及摄像师",
     "education_cn": "学士学位",
     "outlook_desc_cn": "与平均水平相当",
-    "category_cn": "media-and-communication",
+    "category_cn": "媒体与通讯",
     "exposure_rationale_cn": "这个职业是物理相机操作和数字视频编辑的混合体。虽然由于需要现场设备管理和现实世界定位，摄像机操作员对人工智能存在物理障碍，但剪辑师完全在数字环境中工作，人工智能正在快速自动化任务，如颜色分级、声音同步，甚至粗剪生成。生成视频和人工智能驱动的后期制作工具的兴起显着提高了每个工人的生产力，有可能减少复杂项目所需的剪辑师总数。"
   },
   {
@@ -2262,7 +2262,7 @@
     "exposure_rationale": "The role requires a significant physical presence for onsite inspections, evidence collection in debris, and forest patrolling, which provides a natural barrier to AI. However, AI can substantially assist with digital tasks such as reviewing building blueprints, analyzing fire scene data, and automating the documentation of code violations and legal reports.",
     "url": "https://www.bls.gov/ooh/protective-service/fire-inspectors-and-investigators.htm",
     "title_cn": "消防检查员",
-    "education_cn": "See How to Become One",
+    "education_cn": "点击查看",
     "outlook_desc_cn": "高于平均水平",
     "category_cn": "保护服务类职业",
     "exposure_rationale_cn": "该角色需要大量的实际存在来进行现场检查、碎片中的证据收集以及森林巡逻，这为人工智能提供了天然屏障。然而，人工智能可以极大地协助数字任务，例如审查建筑蓝图、分析火灾现场数据以及自动记录违规行为和法律报告。"
@@ -2372,7 +2372,7 @@
     "title_cn": "花艺设计师",
     "education_cn": "高中文凭或同等学历",
     "outlook_desc_cn": "下降",
-    "category_cn": "arts-and-design",
+    "category_cn": "艺术与设计",
     "exposure_rationale_cn": "这项工作的核心是物理工艺，涉及处理易腐烂的生物材料和手动组装，这是人工智能无法完成的。然而，人工智能可以极大地协助外围数字任务，例如为客户生成设计概念、管理库存以及自动化在线订单客户服务。"
   },
   {
@@ -2424,7 +2424,7 @@
     "exposure_rationale": "The core of this occupation involves physical labor, such as loading ingredients, cleaning machinery, and manual quality checks, which are resistant to AI. While AI can optimize recipes, monitor sensor data, and automate some equipment controls, the requirement for human presence in a physical manufacturing environment to handle unpredictable mechanical issues and sanitation limits overall exposure.",
     "url": "https://www.bls.gov/ooh/production/food-and-tobacco-processing-workers.htm",
     "title_cn": "食品加工设备工人",
-    "education_cn": "See How to Become One",
+    "education_cn": "点击查看",
     "outlook_desc_cn": "高于平均水平",
     "category_cn": "生产类职业",
     "exposure_rationale_cn": "这个职业的核心是体力劳动，比如装载原料、清洁机械、人工质检等，对人工智能有抵抗力。虽然人工智能可以优化配方、监控传感器数据并自动化某些设备控制，但在物理制造环境中需要人类存在来处理不可预测的机械问题和卫生问题，这限制了整体暴露。"
@@ -2588,7 +2588,7 @@
     "title_cn": "遗传咨询师",
     "education_cn": "硕士学位",
     "outlook_desc_cn": "远高于平均水平",
-    "category_cn": "healthcare",
+    "category_cn": "医疗健康",
     "exposure_rationale_cn": "遗传咨询师从事高水平的知识工作，包括分析复杂的 DNA 数据和病史，这些工作非常容易受到人工智能优化的影响。然而，该角色的核心涉及提供心理支持并与患者一起做出敏感的道德决策，需要一定程度的同理心和人际联系，这限制了完全自动化。"
   },
   {
@@ -2678,7 +2678,7 @@
     "title_cn": "平面设计师",
     "education_cn": "学士学位",
     "outlook_desc_cn": "低于平均水平",
-    "category_cn": "arts-and-design",
+    "category_cn": "艺术与设计",
     "exposure_rationale_cn": "平面设计本质上是一种数字化职业，其中的核心任务——图像生成、布局创建和照片编辑——正在被生成人工智能迅速改变。虽然高层创意指导和客户管理仍然以人为本，但生产任务的自动化显着提高了个人生产力，可能会减少日常商业工作所需的设计师总数。"
   },
   {
@@ -2694,9 +2694,9 @@
     "exposure_rationale": "The core duties of this occupation are almost entirely physical and performed in unpredictable outdoor environments, which provides a strong natural barrier against AI. While autonomous mowers or drones may assist with specific tasks, the majority of the work—such as planting, tree climbing, and complex manual maintenance—requires human dexterity and physical presence that AI cannot replicate.",
     "url": "https://www.bls.gov/ooh/building-and-grounds-cleaning/grounds-maintenance-workers.htm",
     "title_cn": "场地维护人员",
-    "education_cn": "See How to Become One",
+    "education_cn": "点击查看",
     "outlook_desc_cn": "与平均水平相当",
-    "category_cn": "building-and-grounds-cleaning",
+    "category_cn": "建筑和场地清洁类职业",
     "exposure_rationale_cn": "该职业的核心职责几乎完全是体力劳动，并且在不可预测的户外环境中执行，这为人工智能提供了强大的天然屏障。虽然自动割草机或无人机可以协助完成特定任务，但大多数工作（例如种植、爬树和复杂的手动维护）需要人类的灵活性和物理存在，而人工智能无法复制。"
   },
   {
@@ -2786,7 +2786,7 @@
     "title_cn": "健康信息技术员和医疗登记员",
     "education_cn": "副学士学位",
     "outlook_desc_cn": "远高于平均水平",
-    "category_cn": "healthcare",
+    "category_cn": "医疗健康",
     "exposure_rationale_cn": "该职业几乎完全数字化，涉及计算机系统内临床数据的分析、组织和验证。人工智能非常适合数据抽象、分类编码和从大型数据集生成报告等核心任务，这显着增加了自动化和重组的风险。"
   },
   {
@@ -2894,7 +2894,7 @@
     "title_cn": "家庭健康和个人护理助理",
     "education_cn": "高中文凭或同等学历",
     "outlook_desc_cn": "远高于平均水平",
-    "category_cn": "healthcare",
+    "category_cn": "医疗健康",
     "exposure_rationale_cn": "该职业的核心职责基本上是身体和人际交往，涉及体力劳动，例如在不可预测的家庭环境中洗澡、穿衣和抬起病人。虽然人工智能可以协助执行调度或监测生命体征等外围管理任务，但它无法取代个人护理所需的基本人类存在和体力劳动。"
   },
   {
@@ -2966,7 +2966,7 @@
     "title_cn": "工业设计师",
     "education_cn": "学士学位",
     "outlook_desc_cn": "与平均水平相当",
-    "category_cn": "arts-and-design",
+    "category_cn": "艺术与设计",
     "exposure_rationale_cn": "工业设计是一个以数字化为主的职业，其中草图绘制、3D 建模和渲染等核心任务正在通过生成式 AI 和先进的 CAD 自动化快速转变。虽然该角色需要物理原型设计和跨职能协作，但绝大多数设计过程都是基于计算机的，因此非常容易受到人工智能驱动的生产力提高和工作流程重组的影响。"
   },
   {
@@ -3054,7 +3054,7 @@
     "exposure_rationale": "This occupation is highly exposed because its core tasks—processing routine data, answering inquiries, and maintaining records—are fundamentally digital and information-based. While some roles like hotel desk clerks or airport agents require a physical presence, the majority of the work involves routine information processing that is increasingly being automated by AI-driven self-service systems, chatbots, and automated data entry tools.",
     "url": "https://www.bls.gov/ooh/office-and-administrative-support/information-clerks.htm",
     "title_cn": "信息文员",
-    "education_cn": "See How to Become One",
+    "education_cn": "点击查看",
     "outlook_desc_cn": "下降",
     "category_cn": "办公室和行政支持类职业",
     "exposure_rationale_cn": "这一职业的暴露程度很高，因为其核心任务——处理日常数据、回答查询和维护记录——从根本上来说是数字化和信息化的。虽然酒店前台服务员或机场代理等某些职位需要亲自到场，但大多数工作涉及日常信息处理，这些信息处理越来越多地通过人工智能驱动的自助服务系统、聊天机器人和自动数据输入工具实现自动化。"
@@ -3074,7 +3074,7 @@
     "title_cn": "信息安全分析师",
     "education_cn": "学士学位",
     "outlook_desc_cn": "远高于平均水平",
-    "category_cn": "computer-and-information-technology",
+    "category_cn": "计算机与信息技术",
     "exposure_rationale_cn": "这个职业完全是数字化的，涉及监控网络、分析漏洞和编写报告等高度容易受到人工智能自动化影响的任务。虽然人工智能增加了应对人工智能驱动的威胁的安全需求，但它也显着实现了威胁检测、日志分析和事件响应等核心功能的自动化，从而大幅提高了个体员工的生产力。"
   },
   {
@@ -3108,7 +3108,7 @@
     "exposure_rationale": "The core duties of this occupation are highly physical and require manual dexterity in unpredictable, confined environments like attics and crawl spaces. AI has minimal impact on the physical installation of materials, though it may slightly assist with peripheral tasks like blueprint analysis or material estimation.",
     "url": "https://www.bls.gov/ooh/construction-and-extraction/insulation-workers.htm",
     "title_cn": "保温工",
-    "education_cn": "See How to Become One",
+    "education_cn": "点击查看",
     "outlook_desc_cn": "与平均水平相当",
     "category_cn": "建筑和开采类职业",
     "exposure_rationale_cn": "该职业的核心职责是高度体力劳动，需要在不可预测的、狭窄的环境（如阁楼和狭小空间）中灵活操作。人工智能对材料的物理安装影响很小，尽管它可能对蓝图分析或材料估算等外围任务略有帮助。"
@@ -3164,7 +3164,7 @@
     "title_cn": "室内设计师",
     "education_cn": "学士学位",
     "outlook_desc_cn": "与平均水平相当",
-    "category_cn": "arts-and-design",
+    "category_cn": "艺术与设计",
     "exposure_rationale_cn": "室内设计严重依赖 CAD 和 BIM 等数字工具，生成式人工智能正在迅速改变这些工具，能够根据文本提示创建逼真的渲染图和平面图。虽然这项工作需要实地考察、材料检查以及与承包商进行复杂的人际协调，但核心创意和技术起草任务非常容易受到人工智能驱动的自动化和生产力提升的影响。"
   },
   {
@@ -3182,7 +3182,7 @@
     "title_cn": "口译员和笔译员",
     "education_cn": "学士学位",
     "outlook_desc_cn": "低于平均水平",
-    "category_cn": "media-and-communication",
+    "category_cn": "媒体与通讯",
     "exposure_rationale_cn": "核心工作产品是纯数字信息（文本和语音），大型语言模型已经表现出接近人类的熟练程度。虽然高风险的口​​译（法律、医学）和手语仍然需要人工参与和细致入微的判断，但绝大多数翻译和日常口译任务正在迅速自动化或转移到“译后编辑”角色，从而大大减少了每个工作单元所需的总人力。"
   },
   {
@@ -3218,7 +3218,7 @@
     "title_cn": "清洁工和建筑清洁工",
     "education_cn": "无正式教育证书",
     "outlook_desc_cn": "低于平均水平",
-    "category_cn": "building-and-grounds-cleaning",
+    "category_cn": "建筑和场地清洁类职业",
     "exposure_rationale_cn": "该职业的核心职责几乎完全是体力劳动，涉及在学校、医院和建筑工地等不可预测的多变环境中进行体力劳动。虽然人工智能可能有助于完成供应订购或调度等次要管理任务，但清洁、消毒和物理维修等主要工作仍然是人工智能和机器人自动化的重大障碍。"
   },
   {
@@ -3360,7 +3360,7 @@
     "exposure_rationale": "A significant portion of this role involves routine information processing, cataloging, and answering reference questions, all of which are highly susceptible to AI automation. While physical tasks like reshelving books and interpersonal community programming provide some protection, the core digital and clerical functions are increasingly being handled by automated systems and AI-driven search tools.",
     "url": "https://www.bls.gov/ooh/education-training-and-library/library-technicians-and-assistants.htm",
     "title_cn": "图书馆技术员和助理",
-    "education_cn": "See How to Become One",
+    "education_cn": "点击查看",
     "outlook_desc_cn": "下降",
     "category_cn": "教育、培训和图书馆类职业",
     "exposure_rationale_cn": "该角色的很大一部分涉及日常信息处理、编目和回答参考问题，所有这些都非常容易受到人工智能自动化的影响。虽然重新上架书籍和人际社区编程等物理任务提供了一些保护，但核心数字和文书功能越来越多地由自动化系统和人工智能驱动的搜索工具处理。"
@@ -3380,7 +3380,7 @@
     "title_cn": "执业实用护士和职业护士",
     "education_cn": "高等教育非学位证书",
     "outlook_desc_cn": "与平均水平相当",
-    "category_cn": "healthcare",
+    "category_cn": "医疗健康",
     "exposure_rationale_cn": "这一职业的核心涉及洗澡、穿衣和伤口护理等体力任务，目前这些任务超出了人工智能和机器人技术的能力范围。然而，人工智能将显着影响工作的信息处理方面，包括记录患者护理、监测生命体征和协助诊断报告，从而导致适度的整体暴露。"
   },
   {
@@ -3468,7 +3468,7 @@
     "exposure_rationale": "The role involves a significant physical component, including manual dexterity, machine setup, and material handling in a factory environment. However, AI and advanced automation are increasingly capable of optimizing CNC programming, interpreting CAD designs, and monitoring machine health, which increases worker productivity and reduces the demand for traditional tool and die making skills.",
     "url": "https://www.bls.gov/ooh/production/machinists-and-tool-and-die-makers.htm",
     "title_cn": "机械师和模具制造工",
-    "education_cn": "See How to Become One",
+    "education_cn": "点击查看",
     "outlook_desc_cn": "下降",
     "category_cn": "生产类职业",
     "exposure_rationale_cn": "该角色涉及重要的物理组成部分，包括工厂环境中的手工灵活性、机器设置和物料搬运。然而，人工智能和先进自动化越来越能够优化 CNC 编程、解释 CAD 设计和监控机器运行状况，从而提高工人的生产力并减少对传统工具和模具制造技能的需求。"
@@ -3576,7 +3576,7 @@
     "exposure_rationale": "Masonry is a highly physical trade performed in unpredictable outdoor environments that require manual dexterity, strength, and real-time sensory feedback. While AI and robotics may assist with blueprint analysis or specialized brick-laying machines in controlled settings, the core tasks of navigating muddy sites, handling heavy materials, and finishing surfaces remain resistant to digital automation.",
     "url": "https://www.bls.gov/ooh/construction-and-extraction/brickmasons-blockmasons-and-stonemasons.htm",
     "title_cn": "砖石工",
-    "education_cn": "See How to Become One",
+    "education_cn": "点击查看",
     "outlook_desc_cn": "低于平均水平",
     "category_cn": "建筑和开采类职业",
     "exposure_rationale_cn": "砌石是一项在不可预测的户外环境中进行的高度体力工作，需要手工灵巧、力量和实时感官反馈。虽然人工智能和机器人技术可以在受控环境中协助蓝图分析或专用砌砖机，但在泥泞场地中行驶、搬运重型材料和精加工表面等核心任务仍然难以实现数字自动化。"
@@ -3596,7 +3596,7 @@
     "title_cn": "按摩治疗师",
     "education_cn": "高等教育非学位证书",
     "outlook_desc_cn": "远高于平均水平",
-    "category_cn": "healthcare",
+    "category_cn": "医疗健康",
     "exposure_rationale_cn": "这一职业的核心是高度体力的，需要在物理环境中手动操作软组织和实时的人类同理心。虽然人工智能可以协助完成日程安排、营销和文档等外围管理任务，但它无法取代按摩治疗所需的触觉技能和身体存在。"
   },
   {
@@ -3612,7 +3612,7 @@
     "exposure_rationale": "The core of the job is physical operation of heavy machinery in dynamic environments like warehouses and construction sites, which provides a buffer against full automation. However, AI-driven computer vision and autonomous navigation are increasingly being integrated into forklifts and conveyor systems, leading to moderate exposure as these technologies augment or replace human operators in structured settings.",
     "url": "https://www.bls.gov/ooh/transportation-and-material-moving/material-moving-machine-operators.htm",
     "title_cn": "物料搬运机器操作员",
-    "education_cn": "See How to Become One",
+    "education_cn": "点击查看",
     "outlook_desc_cn": "低于平均水平",
     "category_cn": "运输和物料搬运类职业",
     "exposure_rationale_cn": "这项工作的核心是在仓库和建筑工地等动态环境中对重型机械进行物理操作，这为全面自动化提供了缓冲。然而，人工智能驱动的计算机视觉和自主导航越来越多地集成到叉车和输送机系统中，随着这些技术在结构化环境中增强或取代人类操作员，导致适度的暴露。"
@@ -3740,7 +3740,7 @@
     "title_cn": "医疗助理",
     "education_cn": "高等教育非学位证书",
     "outlook_desc_cn": "远高于平均水平",
-    "category_cn": "healthcare",
+    "category_cn": "医疗健康",
     "exposure_rationale_cn": "医疗助理执行物理和数字任务的混合；虽然人工智能可以显着自动化管理职责，例如安排、编码和病历输入，但它无法执行物理临床任务，例如抽血、注射或手动采集生命体征。该角色需要在物理临床环境中进行高度实时的人机交互和同理心，这是完全自动化的天然障碍。"
   },
   {
@@ -3758,7 +3758,7 @@
     "title_cn": "医学剂量师",
     "education_cn": "学士学位",
     "outlook_desc_cn": "与平均水平相当",
-    "category_cn": "healthcare",
+    "category_cn": "医疗健康",
     "exposure_rationale_cn": "该职业的核心涉及复杂的数学计算、图像分析（CT/MRI）和数字治疗计划，所有这些都是人工智能和机器学习擅长的领域。虽然有一小部分物理部分涉及患者定位和设备校准，但绝大多数工作是数字信息处理，非常容易受到自动化和人工智能驱动的优化的影响。"
   },
   {
@@ -3794,7 +3794,7 @@
     "title_cn": "病历专员",
     "education_cn": "高等教育非学位证书",
     "outlook_desc_cn": "远高于平均水平",
-    "category_cn": "healthcare",
+    "category_cn": "医疗健康",
     "exposure_rationale_cn": "这个职业几乎完全是数字化的，涉及数据的处理、分类和输入电子系统。人工智能已经具备很强的自然语言处理和自动化医疗编码能力，可直接自动执行审查记录和分配临床代码的核心任务，显着减少人工干预的需要。"
   },
   {
@@ -3830,7 +3830,7 @@
     "title_cn": "医学转录员",
     "education_cn": "高等教育非学位证书",
     "outlook_desc_cn": "下降",
-    "category_cn": "healthcare",
+    "category_cn": "医疗健康",
     "exposure_rationale_cn": "医学转录是一项纯粹数字化的常规信息处理任务，已经受到语音识别的严重影响。现代人工智能和大型语言模型 (LLM) 现在可以高精度地处理复杂的医学术语、格式和摘要，将人类角色转变为逐渐减弱的监督功能或完全消除它。"
   },
   {
@@ -3864,7 +3864,7 @@
     "exposure_rationale": "The core of the work is physical and requires presence on a factory floor to handle materials and maintain machinery. However, AI and advanced automation are increasingly capable of handling the digital aspects of the job, such as CNC programming, machine monitoring, and quality inspection, which is already contributing to a projected decline in employment.",
     "url": "https://www.bls.gov/ooh/production/metal-and-plastic-machine-workers.htm",
     "title_cn": "金属和塑料机器操作员",
-    "education_cn": "See How to Become One",
+    "education_cn": "点击查看",
     "outlook_desc_cn": "下降",
     "category_cn": "生产类职业",
     "exposure_rationale_cn": "工作的核心是体力工作，需要在工厂车间处理材料和维护机器。然而，人工智能和先进自动化越来越有能力处理工作的数字化方面，例如数控编程、机器监控和质量检查，这已经导致就业预计下降。"
@@ -4028,7 +4028,7 @@
     "title_cn": "网络和计算机系统管理员",
     "education_cn": "学士学位",
     "outlook_desc_cn": "下降",
-    "category_cn": "computer-and-information-technology",
+    "category_cn": "计算机与信息技术",
     "exposure_rationale_cn": "该职业主要是数字化的，涉及配置、监控和故障排除等任务，这些任务非常容易受到人工智能驱动的自动化和“基础设施即代码”实践的影响。虽然一些物理硬件维护仍然存在，但向云计算和人工智能驱动的网络管理工具的转变已经导致就业人数预计下降，因为能够管理更大、更复杂系统的工人越来越少。"
   },
   {
@@ -4046,7 +4046,7 @@
     "title_cn": "新闻分析师、记者和新闻工作者",
     "education_cn": "学士学位",
     "outlook_desc_cn": "下降",
-    "category_cn": "media-and-communication",
+    "category_cn": "媒体与通讯",
     "exposure_rationale_cn": "核心工作产品是数字化的（文本、脚本和多媒体），人工智能已经可以自动化大部分研究、起草和编辑工作。虽然现场报告和人力资源培养的实际存在提供了保护屏障，但随着人工智能工具极大地提高了个人生产力，整个职业面临着很高的风险，可能导致进一步的行业整合和所需角色的减少。"
   },
   {
@@ -4082,7 +4082,7 @@
     "title_cn": "核医学技师",
     "education_cn": "副学士学位",
     "outlook_desc_cn": "与平均水平相当",
-    "category_cn": "healthcare",
+    "category_cn": "医疗健康",
     "exposure_rationale_cn": "该角色需要大量人员在场，以准备和管理放射性药物、操作重型机械以及物理协助或定位患者。虽然人工智能可能会自动化工作的数字部分，例如优化图像质量、计算剂量和简化记录保存，但核心临床和手动任务仍然与完全自动化无关。"
   },
   {
@@ -4118,7 +4118,7 @@
     "title_cn": "麻醉护士、助产士和执业护士",
     "education_cn": "硕士学位",
     "outlook_desc_cn": "远高于平均水平",
-    "category_cn": "healthcare",
+    "category_cn": "医疗健康",
     "exposure_rationale_cn": "该职业涉及大量高水平知识工作，例如诊断病情和分析测试结果，非常容易受到人工智能的帮助。然而，这项工作的核心需要亲自参与检查、手术（如分娩或麻醉），以及复杂的人际沟通，这为完全自动化提供了强有力的缓冲。"
   },
   {
@@ -4134,9 +4134,9 @@
     "exposure_rationale": "The core duties of nursing assistants and orderlies—such as bathing, dressing, and physically transferring patients—are highly manual and require real-time human presence in unpredictable physical environments. While AI may assist with peripheral tasks like recording vital signs or scheduling, the primary work product is physical care and interpersonal support, which remains largely insulated from AI automation.",
     "url": "https://www.bls.gov/ooh/healthcare/nursing-assistants.htm",
     "title_cn": "护理助理和护理员",
-    "education_cn": "See How to Become One",
+    "education_cn": "点击查看",
     "outlook_desc_cn": "低于平均水平",
-    "category_cn": "healthcare",
+    "category_cn": "医疗健康",
     "exposure_rationale_cn": "护理助理和护理人员的核心职责（例如洗澡、穿衣和转移患者）是高度手工操作的，并且需要在不可预测的物理环境中实时有人在场。虽然人工智能可以协助完成记录生命体征或日程安排等外围任务，但主要的工作产品是身体护理和人际支持，这在很大程度上与人工智能自动化无关。"
   },
   {
@@ -4152,9 +4152,9 @@
     "exposure_rationale": "This occupation is a hybrid of physical fieldwork and digital knowledge work. While AI can significantly automate data analysis, report writing, and regulatory cross-referencing, the core duties require physical inspections of worksites, manual testing with specialized equipment, and real-time human interaction to conduct safety trainings and emergency investigations.",
     "url": "https://www.bls.gov/ooh/healthcare/occupational-health-and-safety-specialists-and-technicians.htm",
     "title_cn": "职业健康和安全专员及技术员",
-    "education_cn": "See How to Become One",
+    "education_cn": "点击查看",
     "outlook_desc_cn": "远高于平均水平",
-    "category_cn": "healthcare",
+    "category_cn": "医疗健康",
     "exposure_rationale_cn": "该职业是实地考察和数字知识工作的混合体。虽然人工智能可以显着自动化数据分析、报告编写和监管交叉引用，但其核心职责需要对工作场所进行物理检查、使用专用设备进行手动测试以及实时人机交互以进行安全培训和紧急调查。"
   },
   {
@@ -4172,7 +4172,7 @@
     "title_cn": "职业治疗师",
     "education_cn": "硕士学位",
     "outlook_desc_cn": "远高于平均水平",
-    "category_cn": "healthcare",
+    "category_cn": "医疗健康",
     "exposure_rationale_cn": "职业治疗是一个高度体力和人际交往的职业，需要实时观察、对患者进行手动操作以及对家庭和工作场所等物理环境进行评估。虽然人工智能可以协助完成治疗计划、进展记录和病史分析等外围任务，但这项工作的核心涉及无法以数字方式复制的实际康复和情感支持。"
   },
   {
@@ -4188,9 +4188,9 @@
     "exposure_rationale": "The core of this occupation involves physical assistance, manual therapy, and real-time human interaction, such as lifting patients and guiding motor skill exercises, which AI cannot perform. While AI can streamline administrative tasks like scheduling, documentation, and billing, the primary value of the role is rooted in physical presence and empathetic interpersonal support.",
     "url": "https://www.bls.gov/ooh/healthcare/occupational-therapy-assistants-and-aides.htm",
     "title_cn": "职业治疗助理和护理员",
-    "education_cn": "See How to Become One",
+    "education_cn": "点击查看",
     "outlook_desc_cn": "远高于平均水平",
-    "category_cn": "healthcare",
+    "category_cn": "医疗健康",
     "exposure_rationale_cn": "这一职业的核心涉及物理援助、手法治疗和实时人机交互，例如抬起病人和指导运动技能练习，这是人工智能无法完成的。虽然人工智能可以简化日程安排、文档和计费等管理任务，但该角色的主要价值植根于实际存在和富有同理心的人际支持。"
   },
   {
@@ -4244,7 +4244,7 @@
     "title_cn": "配镜师",
     "education_cn": "高中文凭或同等学历",
     "outlook_desc_cn": "与平均水平相当",
-    "category_cn": "healthcare",
+    "category_cn": "医疗健康",
     "exposure_rationale_cn": "该职位涉及大量的体力劳动，例如测量脸部、使用工具调整镜架以及教患者如何佩戴隐形眼镜。虽然人工智能可以自动化管理任务并通过虚拟试戴技术协助镜架选择，但身体试戴、手动维修和实时人际医疗保健指导的核心要求为完全自动化提供了缓冲。"
   },
   {
@@ -4262,7 +4262,7 @@
     "title_cn": "验光师",
     "education_cn": "博士或专业学位",
     "outlook_desc_cn": "远高于平均水平",
-    "category_cn": "healthcare",
+    "category_cn": "医疗健康",
     "exposure_rationale_cn": "验光是物理临床程序和高级数据分析的结合。人工智能在分析视网膜扫描和诊断数据以识别疾病方面非常有效，这将显着增强诊断过程；然而，核心角色需要亲临现场进行眼科检查、小型外科手术以及佩戴矫正镜片，这为完全自动化提供了强有力的缓冲。"
   },
   {
@@ -4280,7 +4280,7 @@
     "title_cn": "矫形师和假肢师",
     "education_cn": "硕士学位",
     "outlook_desc_cn": "远高于平均水平",
-    "category_cn": "healthcare",
+    "category_cn": "医疗健康",
     "exposure_rationale_cn": "该职业涉及大量的体力、实践工作，包括患者检查、手动测量以及医疗设备的物理制造或调整。虽然人工智能和计算机辅助设计 (CAD) 可以极大地增强诊断和设计阶段，但医疗保健环境中实时人机交互、身体灵活性和临床判断的核心要求为完全自动化设置了强大的障碍。"
   },
   {
@@ -4314,7 +4314,7 @@
     "exposure_rationale": "The core of this occupation involves physical labor, manual dexterity, and presence in industrial or repair environments, which provides a natural barrier to AI. While AI and computer vision can enhance automated spray systems and quality control sensors, the need for human workers to set up equipment, prepare surfaces, and perform manual touch-ups in unpredictable repair settings remains significant.",
     "url": "https://www.bls.gov/ooh/production/painting-and-coating-workers.htm",
     "title_cn": "喷涂和涂层工",
-    "education_cn": "See How to Become One",
+    "education_cn": "点击查看",
     "outlook_desc_cn": "低于平均水平",
     "category_cn": "生产类职业",
     "exposure_rationale_cn": "该职业的核心涉及体力劳动、手工灵活性以及工业或维修环境中的存在，这为人工智能提供了天然障碍。虽然人工智能和计算机视觉可以增强自动喷涂系统和质量控制传感器，但在不可预测的维修环境中，人工设置设备、准备表面和执行手动修补的需求仍然很大。"
@@ -4370,7 +4370,7 @@
     "title_cn": "害虫防治人员",
     "education_cn": "高中文凭或同等学历",
     "outlook_desc_cn": "高于平均水平",
-    "category_cn": "building-and-grounds-cleaning",
+    "category_cn": "建筑和场地清洁类职业",
     "exposure_rationale_cn": "该职业的核心是高度体力劳动，要求工人爬进狭小的空间，设置手动陷阱，并在不可预测的现实环境中使用化学品。虽然人工智能可以协助完成路线优化、从照片中识别害虫或自动计费等外围任务，但主要工作无法以数字或远程方式执行。"
   },
   {
@@ -4406,7 +4406,7 @@
     "title_cn": "药剂师",
     "education_cn": "博士或专业学位",
     "outlook_desc_cn": "高于平均水平",
-    "category_cn": "healthcare",
+    "category_cn": "医疗健康",
     "exposure_rationale_cn": "药剂师面临中等风险，因为他们的核心知识任务——检查药物相互作用、验证剂量和分析患者记录——非常容易受到人工智能自动化和数字优化的影响。然而，这一角色仍然以身体要求为基础，例如管理免疫接种、进行临床查房以及提供实时、富有同理心的患者咨询，这些都需要人类信任和实际存在。"
   },
   {
@@ -4424,7 +4424,7 @@
     "title_cn": "药房技师",
     "education_cn": "高中文凭或同等学历",
     "outlook_desc_cn": "高于平均水平",
-    "category_cn": "healthcare",
+    "category_cn": "医疗健康",
     "exposure_rationale_cn": "该角色涉及大量的体力劳动，例如测量药物、包装处方以及亲自与患者互动，这为完全自动化提供了缓冲。然而，人工智能和自动配药系统非常有能力处理信息处理任务，例如保险索赔、库存管理和处方数据输入，这些任务构成了日常工作量的很大一部分。"
   },
   {
@@ -4442,7 +4442,7 @@
     "title_cn": "采血师",
     "education_cn": "高等教育非学位证书",
     "outlook_desc_cn": "高于平均水平",
-    "category_cn": "healthcare",
+    "category_cn": "医疗健康",
     "exposure_rationale_cn": "这项工作的核心是在不可预测的临床环境中对人类患者进行高度触觉的物理手术（静脉穿刺），这对人工智能自动化具有抵抗力。虽然人工智能可以协助完成数据输入、样本跟踪和调度等外围任务，但该角色的主要价值在于手动灵活性以及为焦虑的患者提供人际情感支持。"
   },
   {
@@ -4460,7 +4460,7 @@
     "title_cn": "摄影师",
     "education_cn": "高中文凭或同等学历",
     "outlook_desc_cn": "低于平均水平",
-    "category_cn": "media-and-communication",
+    "category_cn": "媒体与通讯",
     "exposure_rationale_cn": "摄影是一种混合角色，捕捉现实世界事件（婚礼、新闻、肖像）的物理行为提供了缓冲，但数字输出非常容易受到人工智能的影响。生成式人工智能现在可以从头开始创建高质量的商业和库存图像，并自动执行复杂的后期制作任务，从而显着减少商业和创意领域专业摄影师的计费时间和需求。"
   },
   {
@@ -4476,9 +4476,9 @@
     "exposure_rationale": "The core of this occupation involves physical, hands-on work such as massage, stretching, and assisting patients with mobility, which AI cannot perform. While AI can streamline peripheral tasks like scheduling, documentation, and exercise plan generation, the requirement for real-time human presence and physical dexterity creates a strong barrier to automation.",
     "url": "https://www.bls.gov/ooh/healthcare/physical-therapist-assistants-and-aides.htm",
     "title_cn": "物理治疗助理和护理员",
-    "education_cn": "See How to Become One",
+    "education_cn": "点击查看",
     "outlook_desc_cn": "远高于平均水平",
-    "category_cn": "healthcare",
+    "category_cn": "医疗健康",
     "exposure_rationale_cn": "这一职业的核心涉及体力劳动，如按摩、伸展运动、协助患者活动，而这是人工智能无法完成的。虽然人工智能可以简化日程安排、文档记录和锻炼计划生成等外围任务，但对人类实时存在和身体灵活性的要求对自动化造成了强大的障碍。"
   },
   {
@@ -4496,7 +4496,7 @@
     "title_cn": "物理治疗师",
     "education_cn": "博士或专业学位",
     "outlook_desc_cn": "远高于平均水平",
-    "category_cn": "healthcare",
+    "category_cn": "医疗健康",
     "exposure_rationale_cn": "物理治疗的核心涉及手动操作、物理辅助以及在物理环境中实时观察人体运动，这是人工智能无法复制的。虽然人工智能可以协助执行管理任务、病史审查和生成个性化锻炼计划，但所需的高水平身体灵活性和人际同理心限制了其整体暴露程度。"
   },
   {
@@ -4514,7 +4514,7 @@
     "title_cn": "医生助理",
     "education_cn": "硕士学位",
     "outlook_desc_cn": "远高于平均水平",
-    "category_cn": "healthcare",
+    "category_cn": "医疗健康",
     "exposure_rationale_cn": "医师助理执行高水平知识工作和物理临床任务的结合。虽然人工智能将显着提高诊断准确性、治疗计划和管理文档，但该角色需要亲自参与检查、外科手术和缝合伤口等实际治疗，以及难以自动化的复杂的人际咨询。"
   },
   {
@@ -4532,7 +4532,7 @@
     "title_cn": "医生和外科医生",
     "education_cn": "博士或专业学位",
     "outlook_desc_cn": "与平均水平相当",
-    "category_cn": "healthcare",
+    "category_cn": "医疗健康",
     "exposure_rationale_cn": "内科医生和外科医生的暴露程度适中，因为虽然人工智能可以显着自动化数字任务，如诊断图像解释（放射学）、病史分析和治疗计划，但工作的核心需要实际存在、手术操作的灵活性和复杂的人际沟通。尽管人工智能将大大提高信息密集型专业的生产力，但医疗责任的高风险性质以及患者护理中对人类同理心的需求为完全自动化提供了天然障碍。"
   },
   {
@@ -4586,7 +4586,7 @@
     "title_cn": "足病医生",
     "education_cn": "博士或专业学位",
     "outlook_desc_cn": "低于平均水平",
-    "category_cn": "healthcare",
+    "category_cn": "医疗健康",
     "exposure_rationale_cn": "足病学是一门医学专业，需要大量的身体检查、手动程序和人工智能无法执行的复杂手术。然而，人工智能将严重影响该角色基于知识的方面，例如分析 X 射线、根据病史诊断病情以及自动化临床记录和管理任务。"
   },
   {
@@ -4602,7 +4602,7 @@
     "exposure_rationale": "The core of the job involves physical presence, emergency response, and manual tasks like making arrests and patrolling, which are resistant to AI. However, a significant portion of the work involves digital tasks such as writing detailed reports, searching databases, and analyzing evidence, all of which are highly susceptible to AI-driven automation and efficiency gains.",
     "url": "https://www.bls.gov/ooh/protective-service/police-and-detectives.htm",
     "title_cn": "警察和侦探",
-    "education_cn": "See How to Become One",
+    "education_cn": "点击查看",
     "outlook_desc_cn": "与平均水平相当",
     "category_cn": "保护服务类职业",
     "exposure_rationale_cn": "这项工作的核心涉及物理存在、紧急响应以及逮捕和巡逻等手动任务，这些任务对人工智能来说是有抵抗力的。然而，工作的很大一部分涉及数字任务，例如编写详细报告、搜索数据库和分析证据，所有这些都非常容易受到人工智能驱动的自动化和效率提升的影响。"
@@ -4674,7 +4674,7 @@
     "exposure_rationale": "Postsecondary teaching is primarily knowledge work involving research, writing, and curriculum design—all areas where AI is highly capable. While the role requires significant human interaction and mentorship, AI can automate grading, lesson planning, and literature reviews, potentially increasing individual productivity to the point of restructuring faculty needs.",
     "url": "https://www.bls.gov/ooh/education-training-and-library/postsecondary-teachers.htm",
     "title_cn": "高等教育教师",
-    "education_cn": "See How to Become One",
+    "education_cn": "点击查看",
     "outlook_desc_cn": "远高于平均水平",
     "category_cn": "教育、培训和图书馆类职业",
     "exposure_rationale_cn": "高等教育教学主要是涉及研究、写作和课程设计的知识工作——人工智能在所有领域都具有强大的能力。虽然该角色需要大量的人际互动和指导，但人工智能可以自动评分、课程计划和文献综述，从而有可能提高个人生产力，从而满足教师需求的调整。"
@@ -4854,9 +4854,9 @@
     "exposure_rationale": "The core of this occupation involves physical tasks such as bathing, feeding, and physically restraining patients, which AI cannot perform. While AI can assist with monitoring patient behavior and automating documentation or reporting, the high requirement for real-time human presence, physical stamina, and interpersonal compassion creates a significant barrier to automation.",
     "url": "https://www.bls.gov/ooh/healthcare/psychiatric-technicians-and-aides.htm",
     "title_cn": "精神科技术员和护理员",
-    "education_cn": "See How to Become One",
+    "education_cn": "点击查看",
     "outlook_desc_cn": "远高于平均水平",
-    "category_cn": "healthcare",
+    "category_cn": "医疗健康",
     "exposure_rationale_cn": "这一职业的核心涉及洗澡、喂食、对病人进行身体约束等体力劳动，而这些都是人工智能无法完成的。虽然人工智能可以帮助监控患者行为并自动记录或报告，但对实时人类存在、身体耐力和人际同情心的高要求为自动化造成了重大障碍。"
   },
   {
@@ -4872,7 +4872,7 @@
     "exposure_rationale": "Psychology is a knowledge-based profession where core tasks like analyzing data, writing reports, and researching are highly susceptible to AI enhancement. However, the critical requirements for human empathy, ethical judgment, and real-time interpersonal observation in clinical and school settings create a significant barrier to full automation.",
     "url": "https://www.bls.gov/ooh/life-physical-and-social-science/psychologists.htm",
     "title_cn": "心理学家",
-    "education_cn": "See How to Become One",
+    "education_cn": "点击查看",
     "outlook_desc_cn": "高于平均水平",
     "category_cn": "生命、物理和社会科学类职业",
     "exposure_rationale_cn": "心理学是一个以知识为基础的职业，分析数据、撰写报告和研究等核心任务非常容易受到人工智能增强的影响。然而，临床和学校环境中对人类同理心、道德判断和实时人际观察的关键要求为完全自动化造成了重大障碍。"
@@ -4910,7 +4910,7 @@
     "title_cn": "公共关系专员",
     "education_cn": "学士学位",
     "outlook_desc_cn": "高于平均水平",
-    "category_cn": "media-and-communication",
+    "category_cn": "媒体与通讯",
     "exposure_rationale_cn": "该职业的核心任务——撰写新闻稿、起草演讲稿、创建社交媒体内容和监控公众情绪——是数字优先的，并且与大型语言模型的功能完美契合。虽然高层战略和实时人际危机管理提供了一些保护，但绝大多数日常工作产品都可以由人工智能生成或显着优化，从而导致高风险和潜在的劳动力整合。"
   },
   {
@@ -4982,7 +4982,7 @@
     "title_cn": "放射治疗师",
     "education_cn": "副学士学位",
     "outlook_desc_cn": "低于平均水平",
-    "category_cn": "healthcare",
+    "category_cn": "医疗健康",
     "exposure_rationale_cn": "该角色需要大量人员在场，以在严重疾病期间定位患者、操作重型机械并提供同理心的人际护理。虽然人工智能将在工作的数字方面实现高度自动化，例如肿瘤定位、治疗计划和剂量计算，但物理和临床安全要求对完全自动化造成了巨大障碍。"
   },
   {
@@ -5000,7 +5000,7 @@
     "title_cn": "放射和MRI技师",
     "education_cn": "副学士学位",
     "outlook_desc_cn": "高于平均水平",
-    "category_cn": "healthcare",
+    "category_cn": "医疗健康",
     "exposure_rationale_cn": "虽然人工智能正在彻底改变图像分析和质量控制，但这一角色的核心需要在临床环境中亲自定位患者、管理造影剂和操作重型机械。人工智能将显着提高生产力和图像评估，但患者护理的身体和人际要求为完全自动化设置了巨大障碍。"
   },
   {
@@ -5090,7 +5090,7 @@
     "title_cn": "娱乐治疗师",
     "education_cn": "学士学位",
     "outlook_desc_cn": "与平均水平相当",
-    "category_cn": "healthcare",
+    "category_cn": "医疗健康",
     "exposure_rationale_cn": "该职业的核心包括身体存在、手动协助以及通过适应性运动、舞蹈和社区郊游等活动进行的实时人际互动。虽然人工智能可以显着协助完成患者评估、治疗计划和进展记录等数字任务，但它无法取代亲自领导治疗干预所需的体力和情感劳动。"
   },
   {
@@ -5108,7 +5108,7 @@
     "title_cn": "注册护士",
     "education_cn": "学士学位",
     "outlook_desc_cn": "高于平均水平",
-    "category_cn": "healthcare",
+    "category_cn": "医疗健康",
     "exposure_rationale_cn": "注册护理是一种混合角色，结合了重要的体力劳动（例如实施治疗和移动患者）与复杂的人际护理和情感支持。虽然人工智能将严重影响知识工作组件（例如患者监测、诊断分析和护理计划），但对实际存在和人类同理心的核心要求为完全自动化设置了强大的障碍。"
   },
   {
@@ -5144,7 +5144,7 @@
     "title_cn": "呼吸治疗师",
     "education_cn": "副学士学位",
     "outlook_desc_cn": "远高于平均水平",
-    "category_cn": "healthcare",
+    "category_cn": "医疗健康",
     "exposure_rationale_cn": "呼吸治疗涉及大量的物理、实际操作的患者护理，例如进行胸部物理治疗、为患者插管以及在实时临床环境中维护设备。虽然人工智能将在诊断分析、呼吸机设置优化和患者监测方面提供大力协助，但这项工作的核心需要物理存在和无法数字化的人际互动。"
   },
   {
@@ -5324,7 +5324,7 @@
     "title_cn": "布景和展览设计师",
     "education_cn": "学士学位",
     "outlook_desc_cn": "低于平均水平",
-    "category_cn": "arts-and-design",
+    "category_cn": "艺术与设计",
     "exposure_rationale_cn": "核心创意流程（包括脚本分析、概念草图和 CAD 建模）越来越容易受到生成式 AI 和自动化设计工具的影响，这些工具可以快速生成 3D 环境和视觉概念。虽然该角色需要考虑材料预算和现场安装监督等物理世界因素，但向数字化生产（例如虚拟布景和 LED 卷）和人工智能辅助绘图的转变可显着提高生产力并减少每个项目所需的总人力。"
   },
   {
@@ -5376,7 +5376,7 @@
     "exposure_rationale": "The core of this occupation involves physical manipulation of mechanical components, manual dexterity, and real-world troubleshooting in unpredictable environments. While AI can assist with diagnostic software and technical documentation, it cannot perform the physical labor of disassembling engines, replacing parts, or conducting hands-on repairs.",
     "url": "https://www.bls.gov/ooh/installation-maintenance-and-repair/small-engine-mechanics.htm",
     "title_cn": "小型发动机机械师",
-    "education_cn": "See How to Become One",
+    "education_cn": "点击查看",
     "outlook_desc_cn": "与平均水平相当",
     "category_cn": "安装、维护和维修类职业",
     "exposure_rationale_cn": "该职业的核心涉及机械部件的物理操作、手动灵活性以及在不可预测的环境中进行实际故障排除。虽然人工智能可以协助诊断软件和技术文档，但它无法执行拆卸发动机、更换零件或进行手动维修的体力劳动。"
@@ -5430,7 +5430,7 @@
     "exposure_rationale": "Social work involves a high degree of interpersonal interaction, empathy, and crisis management in physical environments, which provides a strong barrier against full automation. However, AI will significantly impact the profession by automating administrative tasks like case documentation, assisting in resource research, and providing diagnostic support tools for clinical practitioners.",
     "url": "https://www.bls.gov/ooh/community-and-social-service/social-workers.htm",
     "title_cn": "社会工作者",
-    "education_cn": "See How to Become One",
+    "education_cn": "点击查看",
     "outlook_desc_cn": "高于平均水平",
     "category_cn": "社区和社会服务类职业",
     "exposure_rationale_cn": "社会工作涉及物理环境中高度的人际互动、同理心和危机管理，这为完全自动化提供了强大的障碍。然而，人工智能将通过自动化管理任务（例如病例记录）、协助资源研究以及为临床医生提供诊断支持工具来显着影响该行业。"
@@ -5468,7 +5468,7 @@
     "title_cn": "软件开发人员、质量保证分析师和测试员",
     "education_cn": "学士学位",
     "outlook_desc_cn": "远高于平均水平",
-    "category_cn": "computer-and-information-technology",
+    "category_cn": "计算机与信息技术",
     "exposure_rationale_cn": "该职业从根本上来说是数字化的，编码、调试和测试自动化等核心任务是大型语言模型的主要用例。虽然高级系统架构和复杂的利益相关者沟通提供了一定的隔离，但人工智能正在极大地提高个人生产力，这可能会导致入门级角色和质量保证功能的重大重组。"
   },
   {
@@ -5522,7 +5522,7 @@
     "title_cn": "特效艺术家和动画师",
     "education_cn": "学士学位",
     "outlook_desc_cn": "低于平均水平",
-    "category_cn": "arts-and-design",
+    "category_cn": "艺术与设计",
     "exposure_rationale_cn": "这个职业几乎完全是数字化的，3D 建模、渲染和动画等核心任务直接被生成人工智能和自动装配工具所干扰。虽然高水平的创意方向和复杂的团队协作仍然以人为中心，但人工智能正在迅速实现 CGI 和视觉效果的“常规”方面的自动化，从而显着提高个人生产力并减少大规模制作所需的工人总数。"
   },
   {
@@ -5540,7 +5540,7 @@
     "title_cn": "言语语言病理学家",
     "education_cn": "硕士学位",
     "outlook_desc_cn": "远高于平均水平",
-    "category_cn": "healthcare",
+    "category_cn": "医疗健康",
     "exposure_rationale_cn": "言语病理学涉及大量数字相关工作，例如分析言语模式、记录进展和制定治疗计划，所有这些都非常容易受到人工智能增强的影响。然而，这项工作的核心需要吞咽治疗的实际存在、实时人际指导以及限制完全自动化的高风险临床判断。"
   },
   {
@@ -5594,7 +5594,7 @@
     "title_cn": "外科助理和技术员",
     "education_cn": "高等教育非学位证书",
     "outlook_desc_cn": "高于平均水平",
-    "category_cn": "healthcare",
+    "category_cn": "医疗健康",
     "exposure_rationale_cn": "该职业的核心是高度体力劳动，需要灵巧的双手、无菌技术以及实时出现在手术室中。虽然人工智能和机器人技术可以协助提高手术精度或库存管理，但其作用仍然集中在无法数字化的实际患者护理和物理设备处理上。"
   },
   {
@@ -5720,7 +5720,7 @@
     "title_cn": "技术写作人员",
     "education_cn": "学士学位",
     "outlook_desc_cn": "低于平均水平",
-    "category_cn": "media-and-communication",
+    "category_cn": "媒体与通讯",
     "exposure_rationale_cn": "技术写作是一种完全数字化的职业，其核心是将复杂的信息合成为清晰的文档，这是大型语言模型的核心优势。人工智能已经可以起草手册、总结技术规范并生成代码文档，从而显着提高个人生产力并减少日常文档任务所需的人类编写人员总数。"
   },
   {
@@ -5736,7 +5736,7 @@
     "exposure_rationale": "The core of this occupation is physical labor, including climbing towers, installing hardware, and manual troubleshooting in unpredictable environments, which provides a strong barrier against AI automation. While AI can assist with remote diagnostics, network optimization, and predictive maintenance, the physical necessity of splicing cables and mounting equipment ensures the role remains primarily human-driven.",
     "url": "https://www.bls.gov/ooh/installation-maintenance-and-repair/telecommunications-equipment-installers-and-repairers-except-line-installers.htm",
     "title_cn": "电信技术员",
-    "education_cn": "See How to Become One",
+    "education_cn": "点击查看",
     "outlook_desc_cn": "下降",
     "category_cn": "安装、维护和维修类职业",
     "exposure_rationale_cn": "该职业的核心是体力劳动，包括爬塔、安装硬件以及在不可预测的环境中进行手动故障排除，这为AI自动化提供了强大的壁垒。虽然人工智能可以协助远程诊断、网络优化和预测性维护，但拼接电缆和安装设备的物理必要性确保了该角色仍然主要由人类驱动。"
@@ -5936,7 +5936,7 @@
     "title_cn": "兽医",
     "education_cn": "博士或专业学位",
     "outlook_desc_cn": "远高于平均水平",
-    "category_cn": "healthcare",
+    "category_cn": "医疗健康",
     "exposure_rationale_cn": "兽医工作是物理程序和复杂诊断知识工作的混合体。虽然人工智能将通过图像分析（X射线/超声波）和治疗计划显着提高诊断准确性，但这项工作的核心需要物理手术、手动检查以及无法自动化的与宠物主人的高风险人际沟通。"
   },
   {
@@ -5954,7 +5954,7 @@
     "title_cn": "兽医助理和实验动物护理员",
     "education_cn": "高中文凭或同等学历",
     "outlook_desc_cn": "远高于平均水平",
-    "category_cn": "healthcare",
+    "category_cn": "医疗健康",
     "exposure_rationale_cn": "该职业的核心职责几乎完全是体力和体力，包括在不可预测的环境中处理、喂养和限制活体动物。虽然人工智能可能有助于外围管理任务或诊断数据输入，但它无法取代动物护理、绝育和手术协助所需的物理存在和手动灵巧性。"
   },
   {
@@ -5972,7 +5972,7 @@
     "title_cn": "兽医技术员和技师",
     "education_cn": "副学士学位",
     "outlook_desc_cn": "远高于平均水平",
-    "category_cn": "healthcare",
+    "category_cn": "医疗健康",
     "exposure_rationale_cn": "该职业的核心涉及人工智能无法执行的体力任务，例如约束动物、进行麻醉、进行手术准备和提供紧急急救。然而，人工智能在工作的诊断和管理方面有很大的影响，包括分析实验室结果、解释 X 射线和管理患者记录，这可能会提高个人生产力。"
   },
   {
@@ -6024,7 +6024,7 @@
     "exposure_rationale": "The core of the work is physical and requires real-time presence in unpredictable maritime environments, involving manual tasks like equipment maintenance, cargo handling, and emergency response. While AI can assist with navigation, fuel optimization, and predictive maintenance for engineers, the high-stakes physical safety requirements and the need for human intervention in complex docking or mechanical failures limit overall exposure.",
     "url": "https://www.bls.gov/ooh/transportation-and-material-moving/water-transportation-occupations.htm",
     "title_cn": "水路运输工人",
-    "education_cn": "See How to Become One",
+    "education_cn": "点击查看",
     "outlook_desc_cn": "低于平均水平",
     "category_cn": "运输和物料搬运类职业",
     "exposure_rationale_cn": "该工作的核心是体力工作，需要在不可预测的海上环境中实时存在，涉及设备维护、货物装卸、应急响应等手动任务。虽然人工智能可以协助工程师进行导航、燃料优化和预测性维护，但高风险的物理安全要求以及复杂对接或机械故障中人为干预的需要限制了整体暴露。"
@@ -6044,7 +6044,7 @@
     "title_cn": "Web开发人员和数字设计师",
     "education_cn": "学士学位",
     "outlook_desc_cn": "远高于平均水平",
-    "category_cn": "computer-and-information-technology",
+    "category_cn": "计算机与信息技术",
     "exposure_rationale_cn": "这个职业完全是数字化的，编写代码（HTML、JavaScript）、设计布局和创建原型等核心任务是人工智能表现出高熟练度的领域。人工智能工具现在可以从自然语言生成功能代码并创建复杂的视觉模型，从而显着提高个人生产力，并有可能减少标准项目所需的开发人员数量。"
   },
   {
@@ -6078,7 +6078,7 @@
     "exposure_rationale": "This occupation is heavily focused on information processing, communication, and data analysis, all of which are highly susceptible to AI enhancement and automation. While high-stakes B2B negotiations and physical trade shows provide a buffer, AI can now handle lead generation, personalized outreach, price optimization, and technical product explanations, significantly increasing individual productivity and reducing the total number of representatives needed.",
     "url": "https://www.bls.gov/ooh/sales/wholesale-and-manufacturing-sales-representatives.htm",
     "title_cn": "批发和制造业销售代表",
-    "education_cn": "See How to Become One",
+    "education_cn": "点击查看",
     "outlook_desc_cn": "低于平均水平",
     "category_cn": "销售类职业",
     "exposure_rationale_cn": "该职业主要专注于信息处理、通信和数据分析，所有这些都非常容易受到人工智能增强和自动化的影响。虽然高风险的 B2B 谈判和实体贸易展览提供了缓冲，但人工智能现在可以处理潜在客户开发、个性化推广、价格优化和技术产品解释，从而显着提高个人生产力并减少所需的代表总数。"
@@ -6134,7 +6134,7 @@
     "title_cn": "作家和作者",
     "education_cn": "学士学位",
     "outlook_desc_cn": "与平均水平相当",
-    "category_cn": "media-and-communication",
+    "category_cn": "媒体与通讯",
     "exposure_rationale_cn": "作家和作者的核心工作产品完全是数字化和基于文本的，这与大型语言模型的主要功能完美契合。人工智能现在可以生成草稿、进行研究，并执行博客、文案和脚本等各种格式的编辑任务，显着提高生产力，同时威胁到许多入门级和日常写作角色的自动化。"
   },
   {
