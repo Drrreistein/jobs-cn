@@ -199,6 +199,33 @@ body {
   border-radius: 2px;
 }
 
+/* 语言切换按钮 */
+.lang-toggle {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+.lang-toggle button {
+  flex: 1;
+  padding: 6px 10px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: transparent;
+  color: var(--fg2);
+  font-size: 11px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.15s;
+}
+.lang-toggle button:hover {
+  background: rgba(255,255,255,0.06);
+  color: var(--fg);
+}
+.lang-toggle button.active {
+  background: rgba(255,255,255,0.12);
+  color: var(--fg);
+  border-color: rgba(255,255,255,0.2);
+}
+
 canvas#canvas {
   display: block;
   position: fixed;
@@ -255,57 +282,62 @@ canvas#canvas {
 
 <div id="sidebar">
   <div>
-    <h1>美国就业市场的AI暴露度分析</h1>
-    <div class="subtitle">342种职业 · 颜色 = AI暴露度<br>数据来自 <a href="https://www.bls.gov/ooh/">美国劳工统计局</a>，由Gemini Flash评分<br><a href="https://github.com/karpathy/jobs">GitHub原项目</a></div>
+    <h1 id="pageTitle">美国就业市场的AI暴露度分析</h1>
+    <div class="subtitle" id="pageSubtitle">342种职业 · 颜色 = AI暴露度<br>数据来自 <a href="https://www.bls.gov/ooh/">美国劳工统计局</a>，由Gemini Flash评分<br><a href="https://github.com/karpathy/jobs">GitHub原项目</a></div>
+  </div>
+
+  <div class="lang-toggle">
+    <button class="active" onclick="setLang('zh')" id="langZh">中文</button>
+    <button onclick="setLang('en')" id="langEn">English</button>
   </div>
 
   <div class="view-toggle">
-    <button class="active" onclick="setView('treemap')">树状图</button>
-    <button onclick="setView('scatter')">暴露度与前景</button>
+    <button class="active" onclick="setView('treemap')" id="viewTreemap">树状图</button>
+    <button onclick="setView('scatter')" id="viewScatter">暴露度与前景</button>
   </div>
 
   <div class="stat-section">
-    <h3>总就业人数</h3>
+    <h3 id="statTotalJobsLabel">总就业人数</h3>
     <div class="stat-big" id="statTotalJobs">—</div>
   </div>
 
   <div class="stat-section">
-    <h3>加权平均暴露度</h3>
+    <h3 id="statAvgExposureLabel">加权平均暴露度</h3>
     <div class="stat-big" id="statAvgExposure">—</div>
-    <div class="stat-label">按就业人数加权，0-10分制</div>
+    <div class="stat-label" id="statAvgExposureDesc">按就业人数加权，0-10分制</div>
   </div>
 
   <div class="stat-section">
-    <h3>各暴露度就业人数分布（按就业人数加权）</h3>
+    <h3 id="statHistogramLabel">各暴露度就业人数分布（按就业人数加权）</h3>
     <div class="histogram" id="histogram"></div>
     <div class="hist-labels"><span>0</span><span>5</span><span>10</span></div>
   </div>
 
   <div class="stat-section">
-    <h3>暴露度分级</h3>
+    <h3 id="statTierLabel">暴露度分级</h3>
     <div class="tier-bar" id="tierBar"></div>
   </div>
 
   <div class="stat-section">
-    <h3>各薪资水平暴露度</h3>
+    <h3 id="statPayLabel">各薪资水平暴露度</h3>
     <div class="hbar-chart" id="payChart"></div>
   </div>
 
   <div class="stat-section">
-    <h3>各教育水平暴露度</h3>
+    <h3 id="statEduLabel">各教育水平暴露度</h3>
     <div class="hbar-chart" id="eduChart"></div>
   </div>
 
   <div class="stat-section">
-    <h3>高暴露度职业薪资</h3>
+    <h3 id="statWagesLabel">高暴露度职业薪资</h3>
     <div class="stat-big" id="statWages">—</div>
     <div class="stat-label" id="statWagesDesc">高暴露度职业(7+分)的年度薪资总额</div>
   </div>
 
   <div class="gradient-legend">
-    <span>低</span>
+    <span id="legendLow">低</span>
     <canvas id="gradientLegend" width="80" height="8"></canvas>
-    <span>高</span>
+    <span id="legendHigh">高</span>
   </div>
 </div>
 
@@ -319,6 +351,126 @@ canvas#canvas {
 </div>
 
 <script>
+
+// ── Language Configuration ───────────────────────────────────────────────
+
+let currentLang = 'zh';
+
+const LANG = {
+  zh: {
+    title: '美国就业市场的AI暴露度分析',
+    subtitle: '342种职业 · 颜色 = AI暴露度<br>数据来自 <a href="https://www.bls.gov/ooh/">美国劳工统计局</a>，由Gemini Flash评分<br><a href="https://github.com/karpathy/jobs">GitHub原项目</a>',
+    viewTreemap: '树状图',
+    viewScatter: '暴露度与前景',
+    statTotalJobs: '总就业人数',
+    statAvgExposure: '加权平均暴露度',
+    statAvgExposureDesc: '按就业人数加权，0-10分制',
+    statHistogram: '各暴露度就业人数分布（按就业人数加权）',
+    statTier: '暴露度分级',
+    statPay: '各薪资水平暴露度',
+    statEdu: '各教育水平暴露度',
+    statWages: '高暴露度职业薪资',
+    statWagesDesc: '高暴露度职业(7+分)的年度薪资总额',
+    legendLow: '低',
+    legendHigh: '高',
+    // Tooltip labels
+    ttExposure: 'AI暴露度',
+    ttMedianPay: '中位薪资',
+    ttJobs: '就业人数(2024)',
+    ttOutlook: '就业前景',
+    ttEducation: '教育要求',
+    // Tiers
+    tiers: ['极低', '低', '中等', '高', '极高'],
+    // Pay bands
+    payBands: ['<$3.5万', '$3.5-5万', '$5-7.5万', '$7.5-10万', '>$10万'],
+    // Education groups
+    eduGroups: ['无正式教育', '高中', '高等教育非学位', '副学士', '学士', '硕士', '博士/专业'],
+  },
+  en: {
+    title: 'AI Exposure of the US Job Market',
+    subtitle: '342 Occupations · Color = AI Exposure<br>Data from <a href="https://www.bls.gov/ooh/">Bureau of Labor Statistics</a>, scored by Gemini Flash<br><a href="https://github.com/karpathy/jobs">Original GitHub Project</a>',
+    viewTreemap: 'Treemap',
+    viewScatter: 'Exposure & Outlook',
+    statTotalJobs: 'Total Employment',
+    statAvgExposure: 'Weighted Avg Exposure',
+    statAvgExposureDesc: 'Weighted by employment, 0-10 scale',
+    statHistogram: 'Employment Distribution by Exposure (weighted)',
+    statTier: 'Exposure Tiers',
+    statPay: 'Exposure by Pay Level',
+    statEdu: 'Exposure by Education',
+    statWages: 'High Exposure Wages',
+    statWagesDesc: 'Total annual wages for high-exposure (7+) occupations',
+    legendLow: 'Low',
+    legendHigh: 'High',
+    // Tooltip labels
+    ttExposure: 'AI Exposure',
+    ttMedianPay: 'Median Pay',
+    ttJobs: 'Employment (2024)',
+    ttOutlook: 'Job Outlook',
+    ttEducation: 'Education',
+    // Tiers
+    tiers: ['Very Low', 'Low', 'Medium', 'High', 'Very High'],
+    // Pay bands
+    payBands: ['<$35K', '$35-50K', '$50-75K', '$75-100K', '>$100K'],
+    // Education groups
+    eduGroups: ['No formal', 'High school', 'Postsecondary non-degree', 'Associate', 'Bachelor', 'Master', 'Doctoral/Professional'],
+  }
+};
+
+function setLang(lang) {
+  currentLang = lang;
+  
+  // Update button states
+  document.getElementById('langZh').classList.toggle('active', lang === 'zh');
+  document.getElementById('langEn').classList.toggle('active', lang === 'en');
+  
+  // Update page title
+  document.getElementById('pageTitle').textContent = LANG[lang].title;
+  document.getElementById('pageSubtitle').innerHTML = LANG[lang].subtitle;
+  
+  // Update view toggle buttons
+  document.getElementById('viewTreemap').textContent = LANG[lang].viewTreemap;
+  document.getElementById('viewScatter').textContent = LANG[lang].viewScatter;
+  
+  // Update stat section labels
+  document.getElementById('statTotalJobsLabel').textContent = LANG[lang].statTotalJobs;
+  document.getElementById('statAvgExposureLabel').textContent = LANG[lang].statAvgExposure;
+  document.getElementById('statAvgExposureDesc').textContent = LANG[lang].statAvgExposureDesc;
+  document.getElementById('statHistogramLabel').textContent = LANG[lang].statHistogram;
+  document.getElementById('statTierLabel').textContent = LANG[lang].statTier;
+  document.getElementById('statPayLabel').textContent = LANG[lang].statPay;
+  document.getElementById('statEduLabel').textContent = LANG[lang].statEdu;
+  document.getElementById('statWagesLabel').textContent = LANG[lang].statWages;
+  document.getElementById('statWagesDesc').textContent = LANG[lang].statWagesDesc;
+  
+  // Update legend
+  document.getElementById('legendLow').textContent = LANG[lang].legendLow;
+  document.getElementById('legendHigh').textContent = LANG[lang].legendHigh;
+  
+  // Re-render charts with new language
+  computeStats();
+  resize();
+}
+
+// Helper function to get title based on current language
+function getTitle(d) {
+  return currentLang === 'zh' ? (d.title_cn || d.title) : d.title;
+}
+
+// Helper function to get education based on current language
+function getEducation(d) {
+  return currentLang === 'zh' ? (d.education_cn || d.education) : d.education;
+}
+
+// Helper function to get outlook description based on current language
+function getOutlookDesc(d) {
+  return currentLang === 'zh' ? (d.outlook_desc_cn || d.outlook_desc) : d.outlook_desc;
+}
+
+// Helper function to get rationale based on current language
+function getRationale(d) {
+  return currentLang === 'zh' ? (d.exposure_rationale_cn || d.exposure_rationale) : d.exposure_rationale;
+}
 
 // ── Exposure color scale ───────────────────────────────────────────────
 
@@ -548,7 +700,7 @@ function draw() {
       ctx.font = `500 ${fontSize}px -apple-system, system-ui, sans-serif`;
       ctx.fillStyle = isHovered ? "#fff" : "rgba(255,255,255,0.85)";
       ctx.textBaseline = "top";
-      ctx.fillText(r.title_cn || r.title, rx + 5, ry + 4);
+      ctx.fillText(getTitle(r), rx + 5, ry + 4);
 
       if (rh > 34 && rw > 60) {
         const info = (r.exposure != null ? r.exposure + "/10" : "") +
@@ -590,30 +742,31 @@ function formatPay(n) {
 
 function showTooltip(d, mx, my) {
   const tt = document.getElementById("tooltip");
+  const L = LANG[currentLang];
 
-  tt.querySelector(".tt-title").textContent = d.title_cn || d.title;
+  tt.querySelector(".tt-title").textContent = getTitle(d);
 
   const score = d.exposure != null ? d.exposure : null;
   if (score != null) {
     const barWidth = score * 10;
     const color = exposureColorCSS(score, 1);
     tt.querySelector(".tt-exposure").innerHTML =
-      `<span style="color:${color};font-weight:600;">AI暴露度: ${score}/10</span>` +
+      `<span style="color:${color};font-weight:600;">${L.ttExposure}: ${score}/10</span>` +
       `<div style="margin-top:3px;height:4px;background:rgba(255,255,255,0.08);border-radius:2px;">` +
       `<div style="height:100%;width:${barWidth}%;background:${color};border-radius:2px;"></div></div>`;
   } else {
     tt.querySelector(".tt-exposure").innerHTML = "";
   }
 
+  const outlookDesc = getOutlookDesc(d);
   tt.querySelector(".tt-stats").innerHTML = `
-    <span class="label">中位薪资</span><span class="value">${formatPay(d.pay)}</span>
-    <span class="label">就业人数(2024)</span><span class="value">${formatNumber(d.jobs)}</span>
-    <span class="label">就业前景</span><span class="value">${d.outlook != null ? d.outlook + '%' : '\u2014'} ${d.outlook_desc_cn || d.outlook_desc ? '(' + (d.outlook_desc_cn || d.outlook_desc) + ')' : ''}</span>
-    <span class="label">教育要求</span><span class="value">${d.education_cn || d.education || '\u2014'}</span>
+    <span class="label">${L.ttMedianPay}</span><span class="value">${formatPay(d.pay)}</span>
+    <span class="label">${L.ttJobs}</span><span class="value">${formatNumber(d.jobs)}</span>
+    <span class="label">${L.ttOutlook}</span><span class="value">${d.outlook != null ? d.outlook + '%' : '\u2014'} ${outlookDesc ? '(' + outlookDesc + ')' : ''}</span>
+    <span class="label">${L.ttEducation}</span><span class="value">${getEducation(d) || '\u2014'}</span>
   `;
 
-  tt.querySelector(".tt-rationale").textContent =
-    d.exposure_rationale_cn || d.exposure_rationale || "";
+  tt.querySelector(".tt-rationale").textContent = getRationale(d) || "";
 
   const pad = 16;
   let tx = mx + pad;
@@ -814,12 +967,13 @@ function computeStats() {
   }
 
   // Tiers
+  const L = LANG[currentLang];
   const tiers = [
-    { name: "极低", range: [0, 1], color: exposureColorCSS(0.5, 1) },
-    { name: "低", range: [2, 3], color: exposureColorCSS(2.5, 1) },
-    { name: "中等", range: [4, 5], color: exposureColorCSS(4.5, 1) },
-    { name: "高", range: [6, 7], color: exposureColorCSS(6.5, 1) },
-    { name: "极高", range: [8, 10], color: exposureColorCSS(9, 1) },
+    { name: L.tiers[0], range: [0, 1], color: exposureColorCSS(0.5, 1) },
+    { name: L.tiers[1], range: [2, 3], color: exposureColorCSS(2.5, 1) },
+    { name: L.tiers[2], range: [4, 5], color: exposureColorCSS(4.5, 1) },
+    { name: L.tiers[3], range: [6, 7], color: exposureColorCSS(6.5, 1) },
+    { name: L.tiers[4], range: [8, 10], color: exposureColorCSS(9, 1) },
   ];
   for (const tier of tiers) {
     tier.jobs = 0;
@@ -867,11 +1021,11 @@ function computeStats() {
 
   // Exposure by pay band
   const payBands = [
-    { label: "<$3.5万", min: 0, max: 35000 },
-    { label: "$3.5-5万", min: 35000, max: 50000 },
-    { label: "$5-7.5万", min: 50000, max: 75000 },
-    { label: "$7.5-10万", min: 75000, max: 100000 },
-    { label: ">=$10万", min: 100000, max: Infinity },
+    { label: L.payBands[0], min: 0, max: 35000 },
+    { label: L.payBands[1], min: 35000, max: 50000 },
+    { label: L.payBands[2], min: 50000, max: 75000 },
+    { label: L.payBands[3], min: 75000, max: 100000 },
+    { label: L.payBands[4], min: 100000, max: Infinity },
   ];
   const payChartEl = document.getElementById("payChart");
   payChartEl.innerHTML = payBands.map(band => {
@@ -894,11 +1048,11 @@ function computeStats() {
 
   // Exposure by education
   const eduGroups = [
-    { label: "无学位/高中", match: ["无正式教育证书", "高中文凭或同等学历", "No formal educational credential", "High school diploma or equivalent"] },
-    { label: "高等教育/副学士", match: ["高等教育非学位证书", "大学肄业", "副学士学位", "Postsecondary nondegree award", "Some college, no degree", "Associate's degree"] },
-    { label: "学士", match: ["学士学位", "Bachelor's degree"] },
-    { label: "硕士", match: ["硕士学位", "Master's degree"] },
-    { label: "博士/专业", match: ["博士或专业学位", "Doctoral or professional degree"] },
+    { label: L.eduGroups[0], match: ["无正式教育证书", "高中文凭或同等学历", "No formal educational credential", "High school diploma or equivalent"] },
+    { label: L.eduGroups[1], match: ["高等教育非学位证书", "大学肄业", "副学士学位", "Postsecondary nondegree award", "Some college, no degree", "Associate's degree"] },
+    { label: L.eduGroups[2], match: ["学士学位", "Bachelor's degree"] },
+    { label: L.eduGroups[3], match: ["硕士学位", "Master's degree"] },
+    { label: L.eduGroups[4], match: ["博士或专业学位", "Doctoral or professional degree"] },
   ];
   const eduChartEl = document.getElementById("eduChart");
   eduChartEl.innerHTML = eduGroups.map(grp => {
