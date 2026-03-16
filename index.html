@@ -881,7 +881,8 @@ function drawColumns() {
   ctx.textAlign = "center";
   ctx.textBaseline = "top";
   const canvasW = w / dpr;
-  ctx.fillText("AI暴露度", meta.pad.left + meta.availW / 2, meta.pad.top + meta.plotH + 6);
+  const L = LANG[currentLang];
+  ctx.fillText(L.ttExposure, meta.pad.left + meta.availW / 2, meta.pad.top + meta.plotH + 6);
 
   // Draw rectangles
   const gap = 0.5;
@@ -915,7 +916,7 @@ function drawColumns() {
       ctx.fillStyle = isHovered ? "#fff" : "rgba(255,255,255,0.85)";
       ctx.textBaseline = "top";
       ctx.textAlign = "left";
-      ctx.fillText(r.title_cn || r.title, rx + 4, ry + 2);
+      ctx.fillText(getTitle(r), rx + 4, ry + 2);
 
       if (rh > 28 && rw > 50) {
         const info = (r.outlook != null ? (r.outlook > 0 ? "+" : "") + r.outlook + "%" : "") +
