@@ -276,6 +276,231 @@ canvas#canvas {
   border-top: 1px solid rgba(255,255,255,0.06);
   padding-top: 8px;
 }
+
+/* 搜索框样式 */
+.search-container {
+  position: relative;
+  margin-bottom: 12px;
+}
+.search-input {
+  width: 100%;
+  padding: 8px 12px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 6px;
+  color: var(--fg);
+  font-size: 12px;
+  outline: none;
+  transition: all 0.15s;
+}
+.search-input::placeholder {
+  color: var(--fg2);
+}
+.search-input:focus {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.2);
+}
+.search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  max-height: 280px;
+  overflow-y: auto;
+  background: var(--bg2);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 6px;
+  margin-top: 4px;
+  z-index: 100;
+  display: none;
+}
+.search-results.visible {
+  display: block;
+}
+.search-result-item {
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  transition: background 0.1s;
+}
+.search-result-item:last-child {
+  border-bottom: none;
+}
+.search-result-item:hover {
+  background: rgba(255,255,255,0.08);
+}
+.search-result-item .job-title {
+  color: var(--fg);
+  margin-bottom: 2px;
+}
+.search-result-item .job-category {
+  color: var(--fg2);
+  font-size: 10px;
+}
+
+/* 报告浮层样式 */
+.report-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.report-overlay.visible {
+  display: flex;
+}
+.report-card {
+  background: var(--bg2);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px;
+  max-width: 480px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+}
+.report-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.report-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--fg);
+  margin-bottom: 4px;
+}
+.report-category {
+  font-size: 11px;
+  color: var(--fg2);
+}
+.report-close {
+  background: none;
+  border: none;
+  color: var(--fg2);
+  font-size: 20px;
+  cursor: pointer;
+  padding: 4px;
+  line-height: 1;
+  transition: color 0.15s;
+}
+.report-close:hover {
+  color: var(--fg);
+}
+.report-body {
+  padding: 20px;
+}
+.report-section {
+  margin-bottom: 20px;
+}
+.report-section:last-child {
+  margin-bottom: 0;
+}
+.report-section-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--fg2);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+}
+.exposure-display {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.exposure-score {
+  font-size: 32px;
+  font-weight: 700;
+}
+.exposure-bar {
+  flex: 1;
+  height: 8px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.exposure-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s;
+}
+.exposure-label {
+  font-size: 12px;
+  color: var(--fg2);
+}
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.stat-row:last-child {
+  border-bottom: none;
+}
+.stat-label {
+  font-size: 13px;
+  color: var(--fg2);
+}
+.stat-value {
+  font-size: 13px;
+  color: var(--fg);
+  font-weight: 500;
+}
+.rationale-text {
+  font-size: 12px;
+  color: var(--fg2);
+  line-height: 1.6;
+}
+.rationale-toggle {
+  color: var(--fg);
+  cursor: pointer;
+  font-size: 11px;
+  margin-top: 8px;
+  display: inline-block;
+}
+.rationale-toggle:hover {
+  text-decoration: underline;
+}
+.recommendations-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.recommendation-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.recommendation-item:hover {
+  background: rgba(255,255,255,0.08);
+}
+.recommendation-name {
+  font-size: 13px;
+  color: var(--fg);
+}
+.recommendation-exposure {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.08);
+}
 </style>
 </head>
 <body>
@@ -289,6 +514,11 @@ canvas#canvas {
   <div class="lang-toggle">
     <button class="active" onclick="setLang('zh')" id="langZh">中文</button>
     <button onclick="setLang('en')" id="langEn">English</button>
+  </div>
+
+  <div class="search-container">
+    <input type="text" class="search-input" id="searchInput" placeholder="搜索职业..." autocomplete="off">
+    <div class="search-results" id="searchResults"></div>
   </div>
 
   <div class="view-toggle">
@@ -350,6 +580,22 @@ canvas#canvas {
   <div class="tt-rationale"></div>
 </div>
 
+<!-- 职业报告浮层 -->
+<div class="report-overlay" id="reportOverlay">
+  <div class="report-card">
+    <div class="report-header">
+      <div>
+        <div class="report-title" id="reportTitle"></div>
+        <div class="report-category" id="reportCategory"></div>
+      </div>
+      <button class="report-close" onclick="hideReport()">×</button>
+    </div>
+    <div class="report-body" id="reportBody">
+      <!-- 内容由JS动态填充 -->
+    </div>
+  </div>
+</div>
+
 <script>
 
 // ── Language Configuration ───────────────────────────────────────────────
@@ -385,6 +631,27 @@ const LANG = {
     payBands: ['<$3.5万', '$3.5-5万', '$5-7.5万', '$7.5-10万', '>$10万'],
     // Education groups
     eduGroups: ['无正式教育', '高中', '高等教育非学位', '副学士', '学士', '硕士', '博士/专业'],
+    // Search
+    searchPlaceholder: '搜索职业...',
+    noResults: '未找到匹配的职业',
+    // Report
+    reportExposure: 'AI暴露度评分',
+    reportPay: '薪资信息',
+    reportMedianPay: '年薪中位数',
+    reportJobs: '就业规模',
+    reportEmployment: '就业人数',
+    reportOutlook: '就业前景',
+    reportOutlookGrowth: '预计增长',
+    reportEducation: '教育要求',
+    reportAnalysis: 'AI影响分析',
+    reportExpand: '展开全文',
+    reportCollapse: '收起',
+    reportRecommendations: '转型建议',
+    reportSimilarJobs: '相似职业中AI风险较低的',
+    reportExposureLevel: ['极低风险', '低风险', '中等风险', '高风险', '极高风险'],
+    reportComparedToAvg: '与平均水平相当',
+    reportAboveAvg: '高于平均水平',
+    reportBelowAvg: '低于平均水平',
   },
   en: {
     title: 'AI Exposure of the US Job Market',
@@ -414,24 +681,48 @@ const LANG = {
     payBands: ['<$35K', '$35-50K', '$50-75K', '$75-100K', '>$100K'],
     // Education groups
     eduGroups: ['No formal', 'High school', 'Postsecondary non-degree', 'Associate', 'Bachelor', 'Master', 'Doctoral/Professional'],
+    // Search
+    searchPlaceholder: 'Search occupation...',
+    noResults: 'No matching occupations found',
+    // Report
+    reportExposure: 'AI Exposure Score',
+    reportPay: 'Salary Information',
+    reportMedianPay: 'Median Annual Salary',
+    reportJobs: 'Employment Size',
+    reportEmployment: 'Employment',
+    reportOutlook: 'Job Outlook',
+    reportOutlookGrowth: 'Projected Growth',
+    reportEducation: 'Education Required',
+    reportAnalysis: 'AI Impact Analysis',
+    reportExpand: 'Show more',
+    reportCollapse: 'Show less',
+    reportRecommendations: 'Career Recommendations',
+    reportSimilarJobs: 'Similar occupations with lower AI risk',
+    reportExposureLevel: ['Very Low Risk', 'Low Risk', 'Medium Risk', 'High Risk', 'Very High Risk'],
+    reportComparedToAvg: 'Average',
+    reportAboveAvg: 'Above average',
+    reportBelowAvg: 'Below average',
   }
 };
 
 function setLang(lang) {
   currentLang = lang;
-  
+
   // Update button states
   document.getElementById('langZh').classList.toggle('active', lang === 'zh');
   document.getElementById('langEn').classList.toggle('active', lang === 'en');
-  
+
   // Update page title
   document.getElementById('pageTitle').textContent = LANG[lang].title;
   document.getElementById('pageSubtitle').innerHTML = LANG[lang].subtitle;
-  
+
+  // Update search placeholder
+  document.getElementById('searchInput').placeholder = LANG[lang].searchPlaceholder;
+
   // Update view toggle buttons
   document.getElementById('viewTreemap').textContent = LANG[lang].viewTreemap;
   document.getElementById('viewScatter').textContent = LANG[lang].viewScatter;
-  
+
   // Update stat section labels
   document.getElementById('statTotalJobsLabel').textContent = LANG[lang].statTotalJobs;
   document.getElementById('statAvgExposureLabel').textContent = LANG[lang].statAvgExposure;
@@ -442,14 +733,19 @@ function setLang(lang) {
   document.getElementById('statEduLabel').textContent = LANG[lang].statEdu;
   document.getElementById('statWagesLabel').textContent = LANG[lang].statWages;
   document.getElementById('statWagesDesc').textContent = LANG[lang].statWagesDesc;
-  
+
   // Update legend
   document.getElementById('legendLow').textContent = LANG[lang].legendLow;
   document.getElementById('legendHigh').textContent = LANG[lang].legendHigh;
-  
+
   // Re-render charts with new language
   computeStats();
   resize();
+
+  // Update report if open
+  if (selectedJob) {
+    showReport(selectedJob);
+  }
 }
 
 // Helper function to get title based on current language
@@ -1141,9 +1437,268 @@ fetch("data.json")
     computeStats();
     drawGradientLegend();
     resize();
+    initSearch();
   });
 
 window.addEventListener("resize", resize);
+
+// ── Search & Report ─────────────────────────────────────────────────────
+
+let searchInput = null;
+let searchResults = null;
+let reportOverlay = null;
+let selectedJob = null;
+let rationaleExpanded = false;
+
+function initSearch() {
+  searchInput = document.getElementById('searchInput');
+  searchResults = document.getElementById('searchResults');
+  reportOverlay = document.getElementById('reportOverlay');
+
+  // 搜索输入事件
+  let debounceTimer;
+  searchInput.addEventListener('input', (e) => {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => {
+      const query = e.target.value.trim();
+      if (query.length >= 1) {
+        searchJobs(query);
+      } else {
+        hideSearchResults();
+      }
+    }, 200);
+  });
+
+  // 点击外部关闭搜索结果
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.search-container')) {
+      hideSearchResults();
+    }
+  });
+
+  // ESC键关闭报告
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      hideReport();
+      hideSearchResults();
+    }
+  });
+
+  // 点击遮罩关闭报告
+  reportOverlay.addEventListener('click', (e) => {
+    if (e.target === reportOverlay) {
+      hideReport();
+    }
+  });
+}
+
+function searchJobs(query) {
+  const queryLower = query.toLowerCase();
+  const results = [];
+
+  for (const job of data) {
+    const titleEn = (job.title || '').toLowerCase();
+    const titleCn = (job.title_cn || '').toLowerCase();
+    const titleToShow = currentLang === 'zh' ? (job.title_cn || job.title) : job.title;
+
+    // 模糊匹配
+    if (titleEn.includes(queryLower) || titleCn.includes(queryLower)) {
+      results.push({
+        job,
+        title: titleToShow
+      });
+    }
+
+    if (results.length >= 8) break;
+  }
+
+  renderSearchResults(results);
+}
+
+function renderSearchResults(results) {
+  const L = LANG[currentLang];
+
+  if (results.length === 0) {
+    searchResults.innerHTML = `<div class="search-result-item" style="color: var(--fg2); cursor: default;">${L.noResults}</div>`;
+    searchResults.classList.add('visible');
+    return;
+  }
+
+  searchResults.innerHTML = results.map(r => `
+    <div class="search-result-item" onclick="selectJob(${data.indexOf(r.job)})">
+      <div class="job-title">${r.title}</div>
+      <div class="job-category">${currentLang === 'zh' ? (r.job.category_cn || r.job.category) : r.job.category}</div>
+    </div>
+  `).join('');
+
+  searchResults.classList.add('visible');
+}
+
+function hideSearchResults() {
+  searchResults.classList.remove('visible');
+}
+
+function selectJob(index) {
+  selectedJob = data[index];
+  hideSearchResults();
+  searchInput.value = '';
+  showReport(selectedJob);
+}
+
+function showReport(job) {
+  const L = LANG[currentLang];
+  const body = document.getElementById('reportBody');
+
+  // 计算暴露度等级
+  const exposure = job.exposure || 0;
+  const exposureLevel = Math.min(4, Math.floor(exposure / 2.1));
+  const exposureColor = exposureColorCSS(exposure, 1);
+
+  // 计算薪资比较
+  const avgPay = data.reduce((s, d) => s + (d.pay || 0), 0) / data.length;
+  const payRatio = job.pay ? (job.pay / avgPay * 100).toFixed(0) : 100;
+  const payCompare = job.pay > avgPay * 1.1 ? L.reportAboveAvg :
+                     job.pay < avgPay * 0.9 ? L.reportBelowAvg : L.reportComparedToAvg;
+
+  // 就业前景
+  const outlook = job.outlook || 0;
+  const outlookDesc = getOutlookDesc(job);
+
+  // 相似职业推荐
+  const recommendations = getRecommendations(job);
+
+  // 构建报告内容
+  body.innerHTML = `
+    <!-- AI暴露度 -->
+    <div class="report-section">
+      <div class="report-section-title">🎯 ${L.reportExposure}</div>
+      <div class="exposure-display">
+        <div class="exposure-score" style="color: ${exposureColor}">${exposure}/10</div>
+        <div style="flex: 1;">
+          <div style="height: 8px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden;">
+            <div style="height: 100%; width: ${exposure * 10}%; background: ${exposureColor}; border-radius: 4px;"></div>
+          </div>
+          <div style="font-size: 11px; color: var(--fg2); margin-top: 4px;">${L.reportExposureLevel[exposureLevel]}</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 薪资信息 -->
+    <div class="report-section">
+      <div class="report-section-title">💰 ${L.reportPay}</div>
+      <div class="stat-row">
+        <span class="stat-label">${L.reportMedianPay}</span>
+        <span class="stat-value">${formatPay(job.pay)}</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-label">${payCompare}</span>
+        <span class="stat-value">${payRatio}%</span>
+      </div>
+    </div>
+
+    <!-- 就业规模 -->
+    <div class="report-section">
+      <div class="report-section-title">📊 ${L.reportJobs}</div>
+      <div class="stat-row">
+        <span class="stat-label">${L.reportEmployment}</span>
+        <span class="stat-value">${formatNumber(job.jobs)}</span>
+      </div>
+    </div>
+
+    <!-- 就业前景 -->
+    <div class="report-section">
+      <div class="report-section-title">📈 ${L.reportOutlook}</div>
+      <div class="stat-row">
+        <span class="stat-label">${L.reportOutlookGrowth}</span>
+        <span class="stat-value">${outlook > 0 ? '+' : ''}${outlook}% ${outlookDesc ? '(' + outlookDesc + ')' : ''}</span>
+      </div>
+    </div>
+
+    <!-- 教育要求 -->
+    <div class="report-section">
+      <div class="report-section-title">🎓 ${L.reportEducation}</div>
+      <div class="stat-row">
+        <span class="stat-label">${getEducation(job)}</span>
+      </div>
+    </div>
+
+    <!-- AI影响分析 -->
+    <div class="report-section">
+      <div class="report-section-title">🤖 ${L.reportAnalysis}</div>
+      <div class="rationale-text" id="rationaleText">
+        ${truncateText(getRationale(job), 200)}
+      </div>
+      <span class="rationale-toggle" onclick="toggleRationale()">${L.reportExpand}</span>
+    </div>
+
+    <!-- 转型建议 -->
+    ${recommendations.length > 0 ? `
+    <div class="report-section">
+      <div class="report-section-title">💡 ${L.reportRecommendations}</div>
+      <div style="font-size: 11px; color: var(--fg2); margin-bottom: 8px;">${L.reportSimilarJobs}</div>
+      <div class="recommendations-list">
+        ${recommendations.map(r => `
+          <div class="recommendation-item" onclick="selectJob(${data.indexOf(r)})">
+            <span class="recommendation-name">${getTitle(r)}</span>
+            <span class="recommendation-exposure" style="color: ${exposureColorCSS(r.exposure, 1)}">${r.exposure}/10</span>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+    ` : ''}
+  `;
+
+  // 更新标题
+  document.getElementById('reportTitle').textContent = getTitle(job);
+  document.getElementById('reportCategory').textContent = currentLang === 'zh' ? (job.category_cn || job.category) : job.category;
+
+  // 显示浮层
+  reportOverlay.classList.add('visible');
+  rationaleExpanded = false;
+}
+
+function hideReport() {
+  reportOverlay.classList.remove('visible');
+  selectedJob = null;
+}
+
+function toggleRationale() {
+  if (!selectedJob) return;
+
+  const textEl = document.getElementById('rationaleText');
+  const L = LANG[currentLang];
+  rationaleExpanded = !rationaleExpanded;
+
+  if (rationaleExpanded) {
+    textEl.textContent = getRationale(selectedJob);
+    document.querySelector('.rationale-toggle').textContent = L.reportCollapse;
+  } else {
+    textEl.textContent = truncateText(getRationale(selectedJob), 200);
+    document.querySelector('.rationale-toggle').textContent = L.reportExpand;
+  }
+}
+
+function truncateText(text, maxLength) {
+  if (!text || text.length <= maxLength) return text || '';
+  return text.substring(0, maxLength) + '...';
+}
+
+function getRecommendations(job) {
+  if (!job || !job.category) return [];
+
+  // 找同类别的职业，按暴露度升序排序，取前3个
+  const sameCategory = data.filter(d =>
+    d.category === job.category &&
+    d.title !== job.title &&
+    d.exposure != null
+  );
+
+  // 按暴露度升序排序
+  sameCategory.sort((a, b) => a.exposure - b.exposure);
+
+  // 返回前3个
+  return sameCategory.slice(0, 3);
+}
 </script>
 </body>
 </html>
