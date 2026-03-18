@@ -163,6 +163,45 @@ body {
   text-align: right;
 }
 
+/* 四象限统计面板 */
+.quadrant-stats {
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+}
+.quadrant-stats.visible {
+  display: flex;
+}
+.quad-stat-item {
+  padding: 8px 10px;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.04);
+  border-left: 3px solid transparent;
+}
+.quad-stat-item.q1 { border-left-color: rgba(46, 204, 113, 0.8); }
+.quad-stat-item.q2 { border-left-color: rgba(243, 156, 18, 0.8); }
+.quad-stat-item.q3 { border-left-color: rgba(231, 76, 60, 0.8); }
+.quad-stat-item.q4 { border-left-color: rgba(52, 152, 219, 0.8); }
+.quad-stat-title {
+  font-size: 11px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.quad-stat-item.q1 .quad-stat-title { color: rgba(46, 204, 113, 1); }
+.quad-stat-item.q2 .quad-stat-title { color: rgba(243, 156, 18, 1); }
+.quad-stat-item.q3 .quad-stat-title { color: rgba(231, 76, 60, 1); }
+.quad-stat-item.q4 .quad-stat-title { color: rgba(52, 152, 219, 1); }
+.quad-stat-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: var(--fg2);
+  margin-top: 2px;
+}
+.quad-stat-value {
+  color: var(--fg);
+}
+
 .view-toggle {
   display: flex;
   gap: 4px;
@@ -524,6 +563,7 @@ canvas#canvas {
   <div class="view-toggle">
     <button class="active" onclick="setView('treemap')" id="viewTreemap">树状图</button>
     <button onclick="setView('scatter')" id="viewScatter">暴露度与前景</button>
+    <button onclick="setView('quadrant')" id="viewQuadrant">四象限分析</button>
   </div>
 
   <div class="stat-section">
@@ -569,6 +609,34 @@ canvas#canvas {
     <canvas id="gradientLegend" width="80" height="8"></canvas>
     <span id="legendHigh">高</span>
   </div>
+
+  <!-- 四象限统计面板 -->
+  <div class="quadrant-stats" id="quadrantStats">
+    <div class="quad-stat-item q1">
+      <div class="quad-stat-title" id="quadQ1Title">安全增长型</div>
+      <div class="quad-stat-row"><span id="quadQ1JobsLabel">职业数</span><span class="quad-stat-value" id="quadQ1Jobs">—</span></div>
+      <div class="quad-stat-row"><span id="quadQ1EmpLabel">就业人数</span><span class="quad-stat-value" id="quadQ1Emp">—</span></div>
+      <div class="quad-stat-row"><span id="quadQ1PayLabel">平均薪资</span><span class="quad-stat-value" id="quadQ1Pay">—</span></div>
+    </div>
+    <div class="quad-stat-item q2">
+      <div class="quad-stat-title" id="quadQ2Title">转型增长型</div>
+      <div class="quad-stat-row"><span id="quadQ2JobsLabel">职业数</span><span class="quad-stat-value" id="quadQ2Jobs">—</span></div>
+      <div class="quad-stat-row"><span id="quadQ2EmpLabel">就业人数</span><span class="quad-stat-value" id="quadQ2Emp">—</span></div>
+      <div class="quad-stat-row"><span id="quadQ2PayLabel">平均薪资</span><span class="quad-stat-value" id="quadQ2Pay">—</span></div>
+    </div>
+    <div class="quad-stat-item q3">
+      <div class="quad-stat-title" id="quadQ3Title">高危衰退型</div>
+      <div class="quad-stat-row"><span id="quadQ3JobsLabel">职业数</span><span class="quad-stat-value" id="quadQ3Jobs">—</span></div>
+      <div class="quad-stat-row"><span id="quadQ3EmpLabel">就业人数</span><span class="quad-stat-value" id="quadQ3Emp">—</span></div>
+      <div class="quad-stat-row"><span id="quadQ3PayLabel">平均薪资</span><span class="quad-stat-value" id="quadQ3Pay">—</span></div>
+    </div>
+    <div class="quad-stat-item q4">
+      <div class="quad-stat-title" id="quadQ4Title">稳定停滞型</div>
+      <div class="quad-stat-row"><span id="quadQ4JobsLabel">职业数</span><span class="quad-stat-value" id="quadQ4Jobs">—</span></div>
+      <div class="quad-stat-row"><span id="quadQ4EmpLabel">就业人数</span><span class="quad-stat-value" id="quadQ4Emp">—</span></div>
+      <div class="quad-stat-row"><span id="quadQ4PayLabel">平均薪资</span><span class="quad-stat-value" id="quadQ4Pay">—</span></div>
+    </div>
+  </div>
 </div>
 
 <canvas id="canvas"></canvas>
@@ -608,6 +676,22 @@ const LANG = {
     subtitle: '342种职业 · 颜色 = AI暴露度<br>数据来自 <a href="https://www.bls.gov/ooh/">美国劳工统计局</a>，由Gemini Flash评分<br><a href="https://github.com/karpathy/jobs">GitHub原项目</a>',
     viewTreemap: '树状图',
     viewScatter: '暴露度与前景',
+    viewQuadrant: '四象限分析',
+    // Quadrant
+    quadTitle: 'AI风险与就业前景四象限分析',
+    quadXAxis: 'AI暴露度 (风险)',
+    quadYAxis: '就业前景增长率',
+    quadQ1: '安全增长型',
+    quadQ1Desc: '低风险 · 高增长',
+    quadQ2: '转型增长型',
+    quadQ2Desc: '高风险 · 高增长',
+    quadQ3: '高危衰退型',
+    quadQ3Desc: '高风险 · 低增长',
+    quadQ4: '稳定停滞型',
+    quadQ4Desc: '低风险 · 低增长',
+    quadJobs: '职业数',
+    quadEmployment: '就业人数',
+    quadAvgPay: '平均薪资',
     statTotalJobs: '总就业人数',
     statAvgExposure: '加权平均暴露度',
     statAvgExposureDesc: '按就业人数加权，0-10分制',
@@ -658,6 +742,22 @@ const LANG = {
     subtitle: '342 Occupations · Color = AI Exposure<br>Data from <a href="https://www.bls.gov/ooh/">Bureau of Labor Statistics</a>, scored by Gemini Flash<br><a href="https://github.com/karpathy/jobs">Original GitHub Project</a>',
     viewTreemap: 'Treemap',
     viewScatter: 'Exposure & Outlook',
+    viewQuadrant: 'Quadrant',
+    // Quadrant
+    quadTitle: 'AI Risk vs Job Outlook Quadrant Analysis',
+    quadXAxis: 'AI Exposure (Risk)',
+    quadYAxis: 'Job Outlook Growth Rate',
+    quadQ1: 'Safe Growth',
+    quadQ1Desc: 'Low Risk · High Growth',
+    quadQ2: 'Transform & Grow',
+    quadQ2Desc: 'High Risk · High Growth',
+    quadQ3: 'High Risk Decline',
+    quadQ3Desc: 'High Risk · Low Growth',
+    quadQ4: 'Stable Stagnant',
+    quadQ4Desc: 'Low Risk · Low Growth',
+    quadJobs: 'Occupations',
+    quadEmployment: 'Employment',
+    quadAvgPay: 'Avg Salary',
     statTotalJobs: 'Total Employment',
     statAvgExposure: 'Weighted Avg Exposure',
     statAvgExposureDesc: 'Weighted by employment, 0-10 scale',
@@ -909,7 +1009,317 @@ function setView(view) {
   document.querySelector(`.view-toggle button[onclick="setView('${view}')"]`).classList.add("active");
   hovered = null;
   hideTooltip();
+  
+  // 显示/隐藏四象限统计面板
+  const quadStats = document.getElementById('quadrantStats');
+  if (view === 'quadrant') {
+    quadStats.classList.add('visible');
+    computeQuadrantStats();
+  } else {
+    quadStats.classList.remove('visible');
+  }
+  
   resize();
+}
+
+// ── Quadrant view (exposure x outlook scatter) ─────────────────────────────
+
+let quadRects = [];
+let quadMeta = {};
+
+function layoutQuadrant() {
+  const sidebarW = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--sidebar-w'));
+  const w = (window.innerWidth - sidebarW);
+  const h = window.innerHeight;
+
+  canvas.width = w * dpr;
+  canvas.height = h * dpr;
+  canvas.style.width = w + "px";
+  canvas.style.height = h + "px";
+
+  const pad = { top: 60, bottom: 50, left: 60, right: 30 };
+  const plotW = w - pad.left - pad.right;
+  const plotH = h - pad.top - pad.bottom;
+
+  // 获取outlook范围
+  let minOutlook = Infinity, maxOutlook = -Infinity;
+  for (const d of data) {
+    if (d.outlook != null) {
+      minOutlook = Math.min(minOutlook, d.outlook);
+      maxOutlook = Math.max(maxOutlook, d.outlook);
+    }
+  }
+  // 扩展范围留边距
+  minOutlook = Math.floor(minOutlook / 5) * 5 - 5;
+  maxOutlook = Math.ceil(maxOutlook / 5) * 5 + 5;
+
+  // 计算最大就业人数用于散点大小映射
+  const maxJobs = Math.max(...data.map(d => d.jobs || 0));
+  const maxRadius = Math.min(plotW, plotH) / 20;
+  const minRadius = 3;
+
+  quadRects = [];
+  for (const d of data) {
+    if (d.exposure == null || d.outlook == null) continue;
+
+    // X: exposure (0-10) -> 从左到右
+    const x = pad.left + (d.exposure / 10) * plotW;
+    // Y: outlook (minOutlook-maxOutlook) -> 从下到上
+    const y = pad.top + plotH - ((d.outlook - minOutlook) / (maxOutlook - minOutlook)) * plotH;
+
+    // 散点半径基于就业人数
+    const jobs = d.jobs || 1;
+    const radius = Math.max(minRadius, Math.sqrt(jobs / maxJobs) * maxRadius);
+
+    // 确定象限 (exposure >= 5 为右侧, outlook >= 0 为上方)
+    const quadrant = (d.exposure >= 5 ? 0 : 2) + (d.outlook >= 0 ? 0 : 1);
+
+    quadRects.push({
+      ...d,
+      cx: x,
+      cy: y,
+      radius,
+      quadrant
+    });
+  }
+
+  // 存储元数据
+  quadMeta = { pad, plotW, plotH, minOutlook, maxOutlook, maxJobs, maxRadius };
+}
+
+function drawQuadrant() {
+  const w = canvas.width;
+  const h = canvas.height;
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  ctx.fillStyle = "#0a0a0f";
+  ctx.fillRect(0, 0, w / dpr, h / dpr);
+
+  const L = LANG[currentLang];
+  const { pad, plotW, plotH, minOutlook, maxOutlook } = quadMeta;
+
+  // 象限颜色
+  const quadColors = {
+    0: { fill: 'rgba(46, 204, 113, 0.15)', border: 'rgba(46, 204, 113, 0.3)' },  // Q1: 安全增长 - 绿色
+    1: { fill: 'rgba(52, 152, 219, 0.15)', border: 'rgba(52, 152, 219, 0.3)' },  // Q4: 稳定停滞 - 蓝色
+    2: { fill: 'rgba(243, 156, 18, 0.15)', border: 'rgba(243, 156, 18, 0.3)' },  // Q2: 转型增长 - 橙色
+    3: { fill: 'rgba(231, 76, 60, 0.15)', border: 'rgba(231, 76, 60, 0.3)' },    // Q3: 高危衰退 - 红色
+  };
+
+  // 绘制象限背景
+  const midX = pad.left + plotW / 2;
+  const midY = pad.top + plotH / 2;
+
+  // Q1 (右上)
+  ctx.fillStyle = quadColors[0].fill;
+  ctx.fillRect(midX, pad.top, plotW / 2, plotH / 2);
+  // Q4 (右下)
+  ctx.fillStyle = quadColors[1].fill;
+  ctx.fillRect(midX, midY, plotW / 2, plotH / 2);
+  // Q2 (左上)
+  ctx.fillStyle = quadColors[2].fill;
+  ctx.fillRect(pad.left, pad.top, plotW / 2, plotH / 2);
+  // Q3 (左下)
+  ctx.fillStyle = quadColors[3].fill;
+  ctx.fillRect(pad.left, midY, plotW / 2, plotH / 2);
+
+  // 绘制分割线
+  ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
+  ctx.lineWidth = 1;
+  ctx.setLineDash([5, 5]);
+  // 垂直线 (exposure=5)
+  ctx.beginPath();
+  ctx.moveTo(midX, pad.top);
+  ctx.lineTo(midX, pad.top + plotH);
+  ctx.stroke();
+  // 水平线 (outlook=0)
+  ctx.beginPath();
+  ctx.moveTo(pad.left, midY);
+  ctx.lineTo(pad.left + plotW, midY);
+  ctx.stroke();
+  ctx.setLineDash([]);
+
+  // 绘制坐标轴
+  ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)';
+  ctx.lineWidth = 1;
+  // X轴
+  ctx.beginPath();
+  ctx.moveTo(pad.left, pad.top + plotH);
+  ctx.lineTo(pad.left + plotW, pad.top + plotH);
+  ctx.stroke();
+  // Y轴
+  ctx.beginPath();
+  ctx.moveTo(pad.left, pad.top);
+  ctx.lineTo(pad.left, pad.top + plotH);
+  ctx.stroke();
+
+  // X轴刻度和标签
+  ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
+  ctx.font = '11px -apple-system, system-ui, sans-serif';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'top';
+  for (let i = 0; i <= 10; i += 2) {
+    const x = pad.left + (i / 10) * plotW;
+    ctx.beginPath();
+    ctx.moveTo(x, pad.top + plotH);
+    ctx.lineTo(x, pad.top + plotH + 5);
+    ctx.stroke();
+    ctx.fillText(i.toString(), x, pad.top + plotH + 8);
+  }
+  // X轴标签
+  ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+  ctx.font = '12px -apple-system, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif';
+  ctx.fillText(L.quadXAxis, pad.left + plotW / 2, pad.top + plotH + 30);
+
+  // Y轴刻度和标签
+  ctx.textAlign = 'right';
+  ctx.textBaseline = 'middle';
+  const ySteps = 5;
+  const yRange = maxOutlook - minOutlook;
+  for (let i = 0; i <= ySteps; i++) {
+    const val = minOutlook + (i / ySteps) * yRange;
+    const y = pad.top + plotH - (i / ySteps) * plotH;
+    ctx.beginPath();
+    ctx.moveTo(pad.left - 5, y);
+    ctx.lineTo(pad.left, y);
+    ctx.stroke();
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
+    ctx.font = '11px -apple-system, system-ui, sans-serif';
+    ctx.fillText((val > 0 ? '+' : '') + val.toFixed(0) + '%', pad.left - 8, y);
+  }
+  // Y轴标签
+  ctx.save();
+  ctx.translate(pad.left - 45, pad.top + plotH / 2);
+  ctx.rotate(-Math.PI / 2);
+  ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+  ctx.font = '12px -apple-system, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif';
+  ctx.textAlign = 'center';
+  ctx.fillText(L.quadYAxis, 0, 0);
+  ctx.restore();
+
+  // 象限标签
+  ctx.font = 'bold 14px -apple-system, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  
+  // Q1 标签 (右上)
+  ctx.fillStyle = quadColors[0].border.replace('0.3', '0.8');
+  ctx.fillText(L.quadQ1, midX + plotW / 4, pad.top + 25);
+  ctx.font = '11px -apple-system, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif';
+  ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+  ctx.fillText(L.quadQ1Desc, midX + plotW / 4, pad.top + 42);
+
+  // Q2 标签 (左上)
+  ctx.font = 'bold 14px -apple-system, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif';
+  ctx.fillStyle = quadColors[2].border.replace('0.3', '0.8');
+  ctx.fillText(L.quadQ2, pad.left + plotW / 4, pad.top + 25);
+  ctx.font = '11px -apple-system, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif';
+  ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+  ctx.fillText(L.quadQ2Desc, pad.left + plotW / 4, pad.top + 42);
+
+  // Q3 标签 (左下)
+  ctx.font = 'bold 14px -apple-system, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif';
+  ctx.fillStyle = quadColors[3].border.replace('0.3', '0.8');
+  ctx.fillText(L.quadQ3, pad.left + plotW / 4, midY + plotH / 4);
+  ctx.font = '11px -apple-system, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif';
+  ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+  ctx.fillText(L.quadQ3Desc, pad.left + plotW / 4, midY + plotH / 4 + 17);
+
+  // Q4 标签 (右下)
+  ctx.font = 'bold 14px -apple-system, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif';
+  ctx.fillStyle = quadColors[1].border.replace('0.3', '0.8');
+  ctx.fillText(L.quadQ4, midX + plotW / 4, midY + plotH / 4);
+  ctx.font = '11px -apple-system, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif';
+  ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+  ctx.fillText(L.quadQ4Desc, midX + plotW / 4, midY + plotH / 4 + 17);
+
+  // 绘制散点
+  const pointColors = {
+    0: 'rgba(46, 204, 113, 0.7)',   // Q1: 绿色
+    1: 'rgba(52, 152, 219, 0.7)',   // Q4: 蓝色
+    2: 'rgba(243, 156, 18, 0.7)',   // Q2: 橙色
+    3: 'rgba(231, 76, 60, 0.7)',    // Q3: 红色
+  };
+
+  for (const p of quadRects) {
+    const isHovered = p === hovered;
+    const color = pointColors[p.quadrant];
+
+    ctx.beginPath();
+    ctx.arc(p.cx, p.cy, p.radius, 0, Math.PI * 2);
+
+    if (isHovered) {
+      ctx.fillStyle = color.replace('0.7', '1');
+      ctx.fill();
+      ctx.strokeStyle = '#fff';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+    } else {
+      ctx.fillStyle = color;
+      ctx.fill();
+    }
+  }
+}
+
+function hitTestQuadrant(mx, my) {
+  const sidebarW = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--sidebar-w'));
+  const cx = mx - sidebarW;
+  const cy = my;
+
+  // 从后往前遍历，优先返回上层的点
+  for (let i = quadRects.length - 1; i >= 0; i--) {
+    const p = quadRects[i];
+    const dx = cx - p.cx;
+    const dy = cy - p.cy;
+    if (dx * dx + dy * dy <= p.radius * p.radius) {
+      return p;
+    }
+  }
+  return null;
+}
+
+function computeQuadrantStats() {
+  const L = LANG[currentLang];
+  
+  // 初始化各象限统计
+  const stats = {
+    0: { jobs: 0, employment: 0, totalPay: 0, count: 0 },  // Q1
+    1: { jobs: 0, employment: 0, totalPay: 0, count: 0 },  // Q4
+    2: { jobs: 0, employment: 0, totalPay: 0, count: 0 },  // Q2
+    3: { jobs: 0, employment: 0, totalPay: 0, count: 0 },  // Q3
+  };
+  
+  // 遍历所有数据
+  for (const d of data) {
+    if (d.exposure == null || d.outlook == null) continue;
+    const quadrant = (d.exposure >= 5 ? 0 : 2) + (d.outlook >= 0 ? 0 : 1);
+    stats[quadrant].count++;
+    stats[quadrant].employment += d.jobs || 0;
+    if (d.pay) {
+      stats[quadrant].totalPay += d.pay * (d.jobs || 1);
+      stats[quadrant].jobs += d.jobs || 1;
+    }
+  }
+  
+  // 更新UI
+  const quadrants = [
+    { id: '1', key: 0, title: L.quadQ1 },
+    { id: '2', key: 2, title: L.quadQ2 },
+    { id: '3', key: 3, title: L.quadQ3 },
+    { id: '4', key: 1, title: L.quadQ4 },
+  ];
+  
+  for (const q of quadrants) {
+    const s = stats[q.key];
+    const avgPay = s.jobs > 0 ? Math.round(s.totalPay / s.jobs) : 0;
+    
+    document.getElementById(`quadQ${q.id}Title`).textContent = q.title;
+    document.getElementById(`quadQ${q.id}Jobs`).textContent = s.count;
+    document.getElementById(`quadQ${q.id}Emp`).textContent = formatNumber(s.employment);
+    document.getElementById(`quadQ${q.id}Pay`).textContent = formatPay(avgPay);
+    document.getElementById(`quadQ${q.id}JobsLabel`).textContent = L.quadJobs;
+    document.getElementById(`quadQ${q.id}EmpLabel`).textContent = L.quadEmployment;
+    document.getElementById(`quadQ${q.id}PayLabel`).textContent = L.quadAvgPay;
+  }
 }
 
 function layout() {
@@ -1378,10 +1788,19 @@ function computeStats() {
 // ── Events ─────────────────────────────────────────────────────────────
 
 canvas.addEventListener("mousemove", (e) => {
-  const hit = currentView === "treemap" ? hitTest(e.clientX, e.clientY) : hitTestColumns(e.clientX, e.clientY);
+  let hit;
+  if (currentView === "treemap") {
+    hit = hitTest(e.clientX, e.clientY);
+  } else if (currentView === "quadrant") {
+    hit = hitTestQuadrant(e.clientX, e.clientY);
+  } else {
+    hit = hitTestColumns(e.clientX, e.clientY);
+  }
   if (hit !== hovered) {
     hovered = hit;
-    currentView === "treemap" ? draw() : drawColumns();
+    if (currentView === "treemap") draw();
+    else if (currentView === "quadrant") drawQuadrant();
+    else drawColumns();
   }
   if (hovered) {
     showTooltip(hovered, e.clientX, e.clientY);
@@ -1393,8 +1812,19 @@ canvas.addEventListener("mousemove", (e) => {
 });
 
 canvas.addEventListener("click", (e) => {
-  const hit = currentView === "treemap" ? hitTest(e.clientX, e.clientY) : hitTestColumns(e.clientX, e.clientY);
-  if (hit && hit.url) {
+  let hit;
+  if (currentView === "treemap") {
+    hit = hitTest(e.clientX, e.clientY);
+  } else if (currentView === "quadrant") {
+    hit = hitTestQuadrant(e.clientX, e.clientY);
+  } else {
+    hit = hitTestColumns(e.clientX, e.clientY);
+  }
+  if (currentView === "quadrant" && hit) {
+    // 四象限视图点击打开报告浮层
+    selectedJob = hit;
+    showReport(hit);
+  } else if (hit && hit.url) {
     window.open(hit.url, "_blank");
   }
 });
@@ -1402,7 +1832,9 @@ canvas.addEventListener("click", (e) => {
 canvas.addEventListener("mouseleave", () => {
   hovered = null;
   hideTooltip();
-  currentView === "treemap" ? draw() : drawColumns();
+  if (currentView === "treemap") draw();
+  else if (currentView === "quadrant") drawQuadrant();
+  else drawColumns();
 });
 
 function resize() {
@@ -1410,6 +1842,9 @@ function resize() {
   if (currentView === "treemap") {
     layout();
     draw();
+  } else if (currentView === "quadrant") {
+    layoutQuadrant();
+    drawQuadrant();
   } else {
     layoutColumns();
     drawColumns();
