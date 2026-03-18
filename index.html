@@ -844,8 +844,9 @@ const LANG = {
     ttQuadrantWhat: '这是什么',
     ttQuadrantWhatDesc: '将职业分为四个象限，结合AI风险和就业前景两个维度。帮助判断职业的综合投资价值。',
     ttQuadrantHow: '如何阅读',
-    ttQuadrantHow1: '横轴 = AI暴露度（左高右低，越右越安全）',
+    ttQuadrantHow1: '横轴 = AI暴露度（左高右低，越左越危险，越右越安全）',
     ttQuadrantHow2: '纵轴 = 就业前景（下差上好，越上越有潜力）',
+    ttQuadrantHow3: '圆圈大小 = 就业人数（越大表示该职业就业人数越多）',
     ttQuadrantMeaning: '四象限含义',
     ttQuadrantQ1: '安全增长：低风险+高增长 → 值得长期投入',
     ttQuadrantQ2: '转型增长：高风险+高增长 → 需技能升级',
@@ -853,6 +854,7 @@ const LANG = {
     ttQuadrantQ4: '稳定停滞：低风险+低增长 → 当前稳定但有限',
     ttQuadrantWhen: '适合场景',
     ttQuadrantWhenDesc: '职业规划决策，选择"安全"还是"机会"，识别需要转型的职业。',
+  },
   en: {
     title: 'AI Exposure of the US Job Market',
     subtitle: '342 Occupations · Color = AI Exposure<br>Data from <a href="https://www.bls.gov/ooh/">Bureau of Labor Statistics</a>, scored by Gemini Flash<br><a href="https://github.com/karpathy/jobs">Original GitHub Project</a>',
@@ -944,8 +946,9 @@ const LANG = {
     ttQuadrantWhat: 'What is this',
     ttQuadrantWhatDesc: 'Divides occupations into four quadrants, combining AI risk and job outlook dimensions. Helps evaluate the overall investment value of a career.',
     ttQuadrantHow: 'How to read',
-    ttQuadrantHow1: 'X-axis = AI exposure (left=high, right=low, safer to the right)',
+    ttQuadrantHow1: 'X-axis = AI exposure (left=high risk, right=low risk, safer to the right)',
     ttQuadrantHow2: 'Y-axis = Job outlook (bottom=bad, top=good, more potential upward)',
+    ttQuadrantHow3: 'Circle size = Employment (larger = more workers)',
     ttQuadrantMeaning: 'Quadrant meanings',
     ttQuadrantQ1: 'Safe Growth: Low risk + High growth → Worth long-term investment',
     ttQuadrantQ2: 'Transform & Grow: High risk + High growth → Skills upgrade needed',
@@ -953,6 +956,7 @@ const LANG = {
     ttQuadrantQ4: 'Stable Stagnant: Low risk + Low growth → Stable but limited',
     ttQuadrantWhen: 'Best for',
     ttQuadrantWhenDesc: 'Career planning decisions, choosing between "safety" or "opportunity", identifying occupations that need transition.',
+  }
 };
 
 function setLang(lang) {
@@ -972,6 +976,7 @@ function setLang(lang) {
   // Update view toggle buttons
   document.getElementById('viewTreemap').textContent = LANG[lang].viewTreemap;
   document.getElementById('viewScatter').textContent = LANG[lang].viewScatter;
+  document.getElementById('viewQuadrant').textContent = LANG[lang].viewQuadrant;
 
   // Update stat section labels
   document.getElementById('statTotalJobsLabel').textContent = LANG[lang].statTotalJobs;
@@ -1212,8 +1217,8 @@ function layoutQuadrant() {
   for (const d of data) {
     if (d.exposure == null || d.outlook == null) continue;
 
-    // X: exposure (0-10) -> 从左到右
-    const x = pad.left + (d.exposure / 10) * plotW;
+    // X: exposure (0-10) -> 从左到右，左高右低（左边危险，右边安全）
+    const x = pad.left + (1 - d.exposure / 10) * plotW;
     // Y: outlook (minOutlook-maxOutlook) -> 从下到上
     const y = pad.top + plotH - ((d.outlook - minOutlook) / (maxOutlook - minOutlook)) * plotH;
 
@@ -1221,20 +1226,80 @@ function layoutQuadrant() {
     const jobs = d.jobs || 1;
     const radius = Math.max(minRadius, Math.sqrt(jobs / maxJobs) * maxRadius);
 
-    // 确定象限 (exposure >= 5 为右侧, outlook >= 0 为上方)
-    const quadrant = (d.exposure >= 5 ? 0 : 2) + (d.outlook >= 0 ? 0 : 1);
+    // 确定象限 (exposure < 5 为右侧=安全, outlook >= 0 为上方)
+    const quadrant = (d.exposure < 5 ? 0 : 2) + (d.outlook >= 0 ? 0 : 1);
 
     quadRects.push({
       ...d,
       cx: x,
       cy: y,
+      baseX: x,
+      baseY: y,
       radius,
       quadrant
     });
   }
 
+  // 应用抖动算法分散重叠的点
+  applyJitter(quadRects, pad, plotW, plotH);
+
   // 存储元数据
   quadMeta = { pad, plotW, plotH, minOutlook, maxOutlook, maxJobs, maxRadius };
+}
+
+// ── Jitter algorithm to spread overlapping points ───────────────────────
+
+function applyJitter(points, pad, plotW, plotH) {
+  // 多次迭代，每次检测碰撞并微调位置
+  const iterations = 50;
+  const maxDisplacement = Math.min(plotW, plotH) / 30; // 最大位移
+
+  for (let iter = 0; iter < iterations; iter++) {
+    let moved = false;
+
+    for (let i = 0; i < points.length; i++) {
+      const p1 = points[i];
+      let dx = 0, dy = 0;
+
+      for (let j = 0; j < points.length; j++) {
+        if (i === j) continue;
+        const p2 = points[j];
+
+        const diffX = p1.cx - p2.cx;
+        const diffY = p1.cy - p2.cy;
+        const dist = Math.sqrt(diffX * diffX + diffY * diffY);
+        const minDist = p1.radius + p2.radius + 2; // 额外2px间距
+
+        if (dist < minDist && dist > 0) {
+          // 计算排斥力
+          const force = (minDist - dist) / dist;
+          dx += diffX * force * 0.5;
+          dy += diffY * force * 0.5;
+        }
+      }
+
+      if (dx !== 0 || dy !== 0) {
+        // 限制位移量
+        const displacement = Math.sqrt(dx * dx + dy * dy);
+        if (displacement > maxDisplacement) {
+          dx = dx / displacement * maxDisplacement;
+          dy = dy / displacement * maxDisplacement;
+        }
+
+        p1.cx += dx;
+        p1.cy += dy;
+        moved = true;
+      }
+    }
+
+    if (!moved) break;
+  }
+
+  // 确保所有点都在边界内
+  for (const p of points) {
+    p.cx = Math.max(pad.left + p.radius, Math.min(pad.left + plotW - p.radius, p.cx));
+    p.cy = Math.max(pad.top + p.radius, Math.min(pad.top + plotH - p.radius, p.cy));
+  }
 }
 
 function drawQuadrant() {
@@ -1302,13 +1367,13 @@ function drawQuadrant() {
   ctx.lineTo(pad.left, pad.top + plotH);
   ctx.stroke();
 
-  // X轴刻度和标签
+  // X轴刻度和标签 (从右到左: 0, 2, 4, 6, 8, 10，即左边高风险，右边低风险)
   ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
   ctx.font = '11px -apple-system, system-ui, sans-serif';
   ctx.textAlign = 'center';
   ctx.textBaseline = 'top';
   for (let i = 0; i <= 10; i += 2) {
-    const x = pad.left + (i / 10) * plotW;
+    const x = pad.left + (1 - i / 10) * plotW;
     ctx.beginPath();
     ctx.moveTo(x, pad.top + plotH);
     ctx.lineTo(x, pad.top + plotH + 5);
@@ -2356,6 +2421,7 @@ function showViewTooltip(button) {
       <ul>
         <li><span class="highlight">${L.ttQuadrantHow1}</span></li>
         <li><span class="highlight">${L.ttQuadrantHow2}</span></li>
+        <li><span class="highlight">${L.ttQuadrantHow3}</span></li>
       </ul>
       <h4>${L.ttQuadrantMeaning}</h4>
       <div class="quad-item"><div class="quad-dot q1"></div><span>${L.ttQuadrantQ1}</span></div>
