@@ -540,6 +540,79 @@ canvas#canvas {
   border-radius: 4px;
   background: rgba(255,255,255,0.08);
 }
+
+/* 视图按钮提示浮窗 */
+.view-tooltip {
+  position: fixed;
+  max-width: 320px;
+  background: var(--bg2);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity 0.15s, transform 0.15s;
+  pointer-events: none;
+}
+.view-tooltip.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.view-tooltip-header {
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.view-tooltip-body {
+  padding: 12px 16px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--fg2);
+}
+.view-tooltip-body h4 {
+  color: var(--fg);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 12px 0 6px 0;
+}
+.view-tooltip-body h4:first-child {
+  margin-top: 0;
+}
+.view-tooltip-body ul {
+  margin: 4px 0;
+  padding-left: 16px;
+}
+.view-tooltip-body li {
+  margin: 4px 0;
+}
+.view-tooltip-body .highlight {
+  color: var(--fg);
+  font-weight: 500;
+}
+.view-tooltip-body .quad-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 6px 0;
+}
+.view-tooltip-body .quad-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+.view-tooltip-body .quad-dot.q1 { background: rgba(46, 204, 113, 0.9); }
+.view-tooltip-body .quad-dot.q2 { background: rgba(243, 156, 18, 0.9); }
+.view-tooltip-body .quad-dot.q3 { background: rgba(231, 76, 60, 0.9); }
+.view-tooltip-body .quad-dot.q4 { background: rgba(52, 152, 219, 0.9); }
 </style>
 </head>
 <body>
@@ -561,9 +634,9 @@ canvas#canvas {
   </div>
 
   <div class="view-toggle">
-    <button class="active" onclick="setView('treemap')" id="viewTreemap">树状图</button>
-    <button onclick="setView('scatter')" id="viewScatter">暴露度与前景</button>
-    <button onclick="setView('quadrant')" id="viewQuadrant">四象限分析</button>
+    <button class="active" onclick="setView('treemap')" id="viewTreemap" data-view="treemap">树状图</button>
+    <button onclick="setView('scatter')" id="viewScatter" data-view="scatter">暴露度与前景</button>
+    <button onclick="setView('quadrant')" id="viewQuadrant" data-view="quadrant">四象限分析</button>
   </div>
 
   <div class="stat-section">
@@ -664,6 +737,15 @@ canvas#canvas {
   </div>
 </div>
 
+<!-- 视图按钮提示浮窗 -->
+<div class="view-tooltip" id="viewTooltip">
+  <div class="view-tooltip-header">
+    <span class="view-tooltip-icon"></span>
+    <span class="view-tooltip-title"></span>
+  </div>
+  <div class="view-tooltip-body"></div>
+</div>
+
 <script>
 
 // ── Language Configuration ───────────────────────────────────────────────
@@ -736,7 +818,41 @@ const LANG = {
     reportComparedToAvg: '与平均水平相当',
     reportAboveAvg: '高于平均水平',
     reportBelowAvg: '低于平均水平',
-  },
+    // 视图提示 - 树状图
+    ttTreemapTitle: '树状图',
+    ttTreemapWhat: '这是什么',
+    ttTreemapWhatDesc: '按职业类别分组，用矩形面积表示就业规模，颜色表示AI暴露度。一目了然看全貌。',
+    ttTreemapHow: '如何阅读',
+    ttTreemapHow1: '矩形大小 = 就业人数（越大该职业人越多）',
+    ttTreemapHow2: '矩形颜色 = AI暴露度（红色=高风险，绿色=低风险）',
+    ttTreemapHow3: '分组区域 = 同类职业聚集在一起',
+    ttTreemapWhen: '适合场景',
+    ttTreemapWhenDesc: '快速浏览整体就业市场结构，发现哪些行业AI风险最高。',
+    // 视图提示 - 暴露度与前景
+    ttScatterTitle: '暴露度与前景',
+    ttScatterWhat: '这是什么',
+    ttScatterWhatDesc: '将职业按AI暴露度分组为列，按就业前景从上到下排列。看清同一风险等级下，哪些职业前景好，哪些前景差。',
+    ttScatterHow: '如何阅读',
+    ttScatterHow1: '横轴 = AI暴露度（左低右高，数字0-10）',
+    ttScatterHow2: '纵轴 = 就业前景（上好下差，颜色绿→红）',
+    ttScatterHow3: '矩形大小 = 就业人数',
+    ttScatterHow4: '矩形颜色 = 前景增长（绿色=增长，红色=衰退）',
+    ttScatterWhen: '适合场景',
+    ttScatterWhenDesc: '在固定AI风险等级下，比较职业的就业前景差异。',
+    // 视图提示 - 四象限分析
+    ttQuadrantTitle: '四象限分析',
+    ttQuadrantWhat: '这是什么',
+    ttQuadrantWhatDesc: '将职业分为四个象限，结合AI风险和就业前景两个维度。帮助判断职业的综合投资价值。',
+    ttQuadrantHow: '如何阅读',
+    ttQuadrantHow1: '横轴 = AI暴露度（左高右低，越右越安全）',
+    ttQuadrantHow2: '纵轴 = 就业前景（下差上好，越上越有潜力）',
+    ttQuadrantMeaning: '四象限含义',
+    ttQuadrantQ1: '安全增长：低风险+高增长 → 值得长期投入',
+    ttQuadrantQ2: '转型增长：高风险+高增长 → 需技能升级',
+    ttQuadrantQ3: '高危衰退：高风险+低增长 → 建议尽快转型',
+    ttQuadrantQ4: '稳定停滞：低风险+低增长 → 当前稳定但有限',
+    ttQuadrantWhen: '适合场景',
+    ttQuadrantWhenDesc: '职业规划决策，选择"安全"还是"机会"，识别需要转型的职业。',
   en: {
     title: 'AI Exposure of the US Job Market',
     subtitle: '342 Occupations · Color = AI Exposure<br>Data from <a href="https://www.bls.gov/ooh/">Bureau of Labor Statistics</a>, scored by Gemini Flash<br><a href="https://github.com/karpathy/jobs">Original GitHub Project</a>',
@@ -802,7 +918,41 @@ const LANG = {
     reportComparedToAvg: 'Average',
     reportAboveAvg: 'Above average',
     reportBelowAvg: 'Below average',
-  }
+    // 视图提示 - 树状图
+    ttTreemapTitle: 'Treemap',
+    ttTreemapWhat: 'What is this',
+    ttTreemapWhatDesc: 'Grouped by occupation category, rectangle size represents employment scale, color represents AI exposure. See the big picture at a glance.',
+    ttTreemapHow: 'How to read',
+    ttTreemapHow1: 'Rectangle size = Employment (larger = more workers)',
+    ttTreemapHow2: 'Rectangle color = AI exposure (red=high risk, green=low risk)',
+    ttTreemapHow3: 'Grouped areas = Similar occupations clustered together',
+    ttTreemapWhen: 'Best for',
+    ttTreemapWhenDesc: 'Quickly browsing the overall job market structure and discovering which industries have the highest AI risk.',
+    // 视图提示 - 暴露度与前景
+    ttScatterTitle: 'Exposure & Outlook',
+    ttScatterWhat: 'What is this',
+    ttScatterWhatDesc: 'Occupations grouped by AI exposure as columns, sorted by job outlook from top to bottom. See which jobs have better or worse outlooks at the same risk level.',
+    ttScatterHow: 'How to read',
+    ttScatterHow1: 'X-axis = AI exposure (low to high, 0-10)',
+    ttScatterHow2: 'Y-axis = Job outlook (top=good, bottom=bad, green→red)',
+    ttScatterHow3: 'Rectangle size = Employment count',
+    ttScatterHow4: 'Rectangle color = Outlook growth (green=growth, red=decline)',
+    ttScatterWhen: 'Best for',
+    ttScatterWhenDesc: 'Comparing job outlook differences within the same AI risk level.',
+    // 视图提示 - 四象限分析
+    ttQuadrantTitle: 'Quadrant Analysis',
+    ttQuadrantWhat: 'What is this',
+    ttQuadrantWhatDesc: 'Divides occupations into four quadrants, combining AI risk and job outlook dimensions. Helps evaluate the overall investment value of a career.',
+    ttQuadrantHow: 'How to read',
+    ttQuadrantHow1: 'X-axis = AI exposure (left=high, right=low, safer to the right)',
+    ttQuadrantHow2: 'Y-axis = Job outlook (bottom=bad, top=good, more potential upward)',
+    ttQuadrantMeaning: 'Quadrant meanings',
+    ttQuadrantQ1: 'Safe Growth: Low risk + High growth → Worth long-term investment',
+    ttQuadrantQ2: 'Transform & Grow: High risk + High growth → Skills upgrade needed',
+    ttQuadrantQ3: 'High Risk Decline: High risk + Low growth → Consider transitioning',
+    ttQuadrantQ4: 'Stable Stagnant: Low risk + Low growth → Stable but limited',
+    ttQuadrantWhen: 'Best for',
+    ttQuadrantWhenDesc: 'Career planning decisions, choosing between "safety" or "opportunity", identifying occupations that need transition.',
 };
 
 function setLang(lang) {
@@ -1873,6 +2023,7 @@ fetch("data.json")
     drawGradientLegend();
     resize();
     initSearch();
+    initViewTooltip();
   });
 
 window.addEventListener("resize", resize);
@@ -2133,6 +2284,126 @@ function getRecommendations(job) {
 
   // 返回前3个
   return sameCategory.slice(0, 3);
+}
+
+// ── View Tooltip ────────────────────────────────────────────────────────
+
+let viewTooltipTimer = null;
+
+function initViewTooltip() {
+  const tooltip = document.getElementById('viewTooltip');
+  const buttons = document.querySelectorAll('.view-toggle button');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('mouseenter', (e) => {
+      viewTooltipTimer = setTimeout(() => {
+        showViewTooltip(btn);
+      }, 500);
+    });
+
+    btn.addEventListener('mouseleave', () => {
+      clearTimeout(viewTooltipTimer);
+      hideViewTooltip();
+    });
+  });
+}
+
+function showViewTooltip(button) {
+  const view = button.dataset.view;
+  const L = LANG[currentLang];
+  const tooltip = document.getElementById('viewTooltip');
+
+  let icon, title, bodyHtml;
+
+  if (view === 'treemap') {
+    icon = '📊';
+    title = L.ttTreemapTitle;
+    bodyHtml = `
+      <h4>${L.ttTreemapWhat}</h4>
+      <p>${L.ttTreemapWhatDesc}</p>
+      <h4>${L.ttTreemapHow}</h4>
+      <ul>
+        <li><span class="highlight">${L.ttTreemapHow1}</span></li>
+        <li><span class="highlight">${L.ttTreemapHow2}</span></li>
+        <li><span class="highlight">${L.ttTreemapHow3}</span></li>
+      </ul>
+      <h4>${L.ttTreemapWhen}</h4>
+      <p>${L.ttTreemapWhenDesc}</p>
+    `;
+  } else if (view === 'scatter') {
+    icon = '📈';
+    title = L.ttScatterTitle;
+    bodyHtml = `
+      <h4>${L.ttScatterWhat}</h4>
+      <p>${L.ttScatterWhatDesc}</p>
+      <h4>${L.ttScatterHow}</h4>
+      <ul>
+        <li><span class="highlight">${L.ttScatterHow1}</span></li>
+        <li><span class="highlight">${L.ttScatterHow2}</span></li>
+        <li><span class="highlight">${L.ttScatterHow3}</span></li>
+        <li><span class="highlight">${L.ttScatterHow4}</span></li>
+      </ul>
+      <h4>${L.ttScatterWhen}</h4>
+      <p>${L.ttScatterWhenDesc}</p>
+    `;
+  } else if (view === 'quadrant') {
+    icon = '🎯';
+    title = L.ttQuadrantTitle;
+    bodyHtml = `
+      <h4>${L.ttQuadrantWhat}</h4>
+      <p>${L.ttQuadrantWhatDesc}</p>
+      <h4>${L.ttQuadrantHow}</h4>
+      <ul>
+        <li><span class="highlight">${L.ttQuadrantHow1}</span></li>
+        <li><span class="highlight">${L.ttQuadrantHow2}</span></li>
+      </ul>
+      <h4>${L.ttQuadrantMeaning}</h4>
+      <div class="quad-item"><div class="quad-dot q1"></div><span>${L.ttQuadrantQ1}</span></div>
+      <div class="quad-item"><div class="quad-dot q2"></div><span>${L.ttQuadrantQ2}</span></div>
+      <div class="quad-item"><div class="quad-dot q3"></div><span>${L.ttQuadrantQ3}</span></div>
+      <div class="quad-item"><div class="quad-dot q4"></div><span>${L.ttQuadrantQ4}</span></div>
+      <h4>${L.ttQuadrantWhen}</h4>
+      <p>${L.ttQuadrantWhenDesc}</p>
+    `;
+  }
+
+  // 更新内容
+  tooltip.querySelector('.view-tooltip-icon').textContent = icon;
+  tooltip.querySelector('.view-tooltip-title').textContent = title;
+  tooltip.querySelector('.view-tooltip-body').innerHTML = bodyHtml;
+
+  // 计算位置
+  const btnRect = button.getBoundingClientRect();
+  const sidebarW = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--sidebar-w'));
+  
+  let left = btnRect.right + 10;
+  let top = btnRect.top;
+
+  // 显示提示框以获取尺寸
+  tooltip.style.left = '0px';
+  tooltip.style.top = '0px';
+  tooltip.classList.add('visible');
+
+  // 检查是否超出右边界
+  const tooltipRect = tooltip.getBoundingClientRect();
+  if (left + tooltipRect.width > window.innerWidth - 10) {
+    left = btnRect.left - tooltipRect.width - 10;
+  }
+
+  // 检查是否超出下边界
+  if (top + tooltipRect.height > window.innerHeight - 10) {
+    top = window.innerHeight - tooltipRect.height - 10;
+  }
+
+  // 确保不超出上边界
+  if (top < 10) top = 10;
+
+  tooltip.style.left = left + 'px';
+  tooltip.style.top = top + 'px';
+}
+
+function hideViewTooltip() {
+  document.getElementById('viewTooltip').classList.remove('visible');
 }
 </script>
 </body>
